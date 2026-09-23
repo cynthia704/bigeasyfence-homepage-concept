@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Easy Fence: Beautiful Fences Built for New Orleans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1D1D1B; --ivory:#F5F1E8; --cypress:#4E5A4D; --brass:#B08A52; --brown:#765A43; --white:#FFFFFF;
+    --charcoal-2:#2A2A27; --ivory-2:#ECE5D4; --line:#E1D9C4;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--ivory); color:var(--charcoal); font-family:'Inter',sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:'Playfair Display',serif; font-weight:600; letter-spacing:-0.01em; color:var(--charcoal); }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1240px; margin:0 auto; padding:0 32px; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-size:12.5px; font-weight:600; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--brown); }
+  .eyebrow::before{ content:""; width:24px; height:1.5px; background:var(--brass); display:inline-block; }
+  @media(prefers-reduced-motion: reduce){ *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; } }
+
+  [data-reveal]{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  [data-reveal].in{ opacity:1; transform:translateY(0); }
+  [data-reveal="left"]{ transform:translateX(-56px); } [data-reveal="left"].in{ transform:translateX(0); }
+  [data-reveal="right"]{ transform:translateX(56px); } [data-reveal="right"].in{ transform:translateX(0); }
+  [data-reveal="rise"]{ opacity:0; transform:translateY(46px) scaleY(0.88); transform-origin:bottom center; }
+  [data-reveal="rise"].in{ opacity:1; transform:translateY(0) scaleY(1); }
+  .stagger-1{transition-delay:0s;} .stagger-2{transition-delay:.09s;} .stagger-3{transition-delay:.18s;}
+  .stagger-4{transition-delay:.27s;} .stagger-5{transition-delay:.36s;} .stagger-6{transition-delay:.45s;}
+
+  .count-pop{ display:inline-block; } .count-pop.in{ animation:countPop .5s ease both; }
+  @keyframes countPop{ 0%{ transform:scale(0.7); opacity:0; } 60%{ transform:scale(1.08); opacity:1; } 100%{ transform:scale(1); } }
+
+  #devnote{ position:fixed; bottom:18px; right:18px; z-index:999; max-width:300px; background:var(--charcoal); color:#fff;
+    font-size:12px; line-height:1.5; padding:14px 16px; border-radius:6px; border-left:3px solid var(--brass);
+    box-shadow:0 14px 34px rgba(0,0,0,0.3); transition:opacity 1s ease; font-family:'Inter',sans-serif; }
+  #devnote b{ color:var(--brass); }
+
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:7px; font-size:13.5px;
+    font-weight:600; letter-spacing:0.03em; border:1.5px solid transparent; transition:background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease; cursor:pointer; }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn svg{ width:14px; height:14px; transition:transform .25s ease; }
+  .btn:hover svg{ transform:translateX(3px); }
+  .btn-primary{ background:var(--charcoal); color:#fff; } .btn-primary:hover{ background:var(--cypress); }
+  .btn-secondary{ background:var(--ivory); color:var(--charcoal); border-color:var(--charcoal); } .btn-secondary:hover{ background:var(--charcoal); color:#fff; }
+  .btn-ghost-light{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.55); } .btn-ghost-light:hover{ background:#fff; color:var(--charcoal); }
+
+  .cta-pair{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:18px; }
+  .cta-btn{ display:inline-flex; align-items:center; gap:7px; padding:11px 20px; border-radius:6px; background:var(--brass); color:var(--charcoal);
+    font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap; transition:background .2s ease, transform .2s ease; }
+  .cta-btn:hover{ background:#96754a; color:#fff; transform:translateY(-1px); }
+  .cta-btn svg{ width:13px; height:13px; stroke:currentColor; transition:transform .2s ease; }
+  .cta-btn:hover svg{ transform:translateX(3px); }
+  .cta-phone{ display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:700; color:var(--charcoal); text-decoration:none; white-space:nowrap; }
+  .cta-phone:hover{ color:var(--brass); }
+  .cta-phone svg{ width:15px; height:15px; stroke:currentColor; flex-shrink:0; }
+  .cta-pair-light .cta-phone{ color:#fff; }
+  .cta-pair-light .cta-phone:hover{ color:var(--brass); }
+  .why-row-actions{ display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+
+  .photo{ position:relative; overflow:hidden; background:linear-gradient(135deg,#EDE4CE,#DCCFAE); }
+  .photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s ease, opacity .5s ease; opacity:0; }
+  .photo img.loaded{ opacity:1; }
+  .photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(29,29,27,0) 40%, rgba(29,29,27,0.18) 100%); pointer-events:none; }
+  .photo-tag{ position:absolute; bottom:14px; left:14px; background:rgba(29,29,27,0.72); color:#fff; font-size:10.5px;
+    letter-spacing:0.05em; text-transform:uppercase; padding:5px 10px; border-radius:4px; z-index:2; }
+  .split-photo:hover img, .rc-photo:hover img{ transform:scale(1.045); }
+
+  /* gate-opening reveal mechanism */
+  .gate-reveal{ position:relative; }
+  .gate-panel{ position:absolute; top:0; bottom:0; width:50%; z-index:2; background:var(--charcoal);
+    background-image:repeating-linear-gradient(90deg, rgba(176,138,82,0.35) 0 2px, transparent 2px 22px);
+    transition:transform 1.15s cubic-bezier(.22,.85,.2,1); }
+  .gate-panel.left{ left:0; border-right:3px solid var(--brass); } .gate-panel.right{ right:0; border-left:3px solid var(--brass); }
+  .gate-reveal.in .gate-panel.left{ transform:translateX(-101%); } .gate-reveal.in .gate-panel.right{ transform:translateX(101%); }
+  @media(prefers-reduced-motion: reduce){ .gate-panel{ transition:none; transform:translateX(-101%) !important; } .gate-panel.right{ transform:translateX(101%) !important; } }
+
+  section{ padding:110px 0; } @media(max-width:900px){ section{ padding:70px 0; } }
+  h2.section-title{ font-size:40px; line-height:1.15; max-width:680px; margin-top:14px; }
+  p.section-lead{ font-size:16.5px; color:#4a453b; max-width:600px; margin-top:16px; }
+  @media(max-width:700px){ h2.section-title{ font-size:28px; } }
+
+  /* NAV */
+  header{ position:sticky; top:0; z-index:80; background:rgba(245,241,232,0.97); backdrop-filter:blur(8px);
+    border-bottom:1px solid transparent; transition:box-shadow .3s ease, border-color .3s ease; }
+  header.scrolled{ box-shadow:0 6px 24px rgba(29,29,27,0.08); border-color:var(--line); }
+  nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1240px; margin:0 auto; }
+  .logo{ display:flex; align-items:center; gap:10px; }
+  .logo svg{ width:30px; height:30px; }
+  .logo-word{ font-family:'Playfair Display',serif; font-size:21px; font-weight:600; color:var(--charcoal); }
+  .navlinks{ display:flex; gap:26px; font-size:14px; font-weight:500; color:var(--charcoal); }
+  .navlinks a{ position:relative; padding:4px 0; }
+  .navlinks a::after{ content:""; position:absolute; left:0; right:0; bottom:-2px; height:1.5px; background:var(--brass); transform:scaleX(0); transition:transform .25s ease; }
+  .navlinks a:hover::after{ transform:scaleX(1); }
+  .navcta{ display:flex; align-items:center; gap:18px; }
+  .phone{ font-weight:600; font-size:14px; color:var(--charcoal); white-space:nowrap; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .hamburger span{ width:22px; height:2px; background:var(--charcoal); display:block; }
+  @media(max-width:980px){ .navlinks{ display:none; } .phone{ display:none; } .hamburger{ display:flex; } }
+  #mobileMenu{ display:none; } #mobileMenu.open{ display:flex; }
+  @media(max-width:560px){ nav{ padding:14px 20px; } .logo-word{ font-size:17px; } .btn{ padding:10px 16px; font-size:12.5px; } }
+
+  /* ===== HERO : full-bleed photo, centered text, no solid text panel ===== */
+  .hero{ position:relative; min-height:88vh; display:flex; align-items:center; justify-content:center; color:#fff; overflow:hidden; }
+  .hero-photo{ position:absolute; inset:0; overflow:hidden; }
+  .hero-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:38% 78%; opacity:0;
+    transform:scale(1.04); animation:kenburns 22s ease-in-out infinite alternate; transition:opacity 1s ease; }
+  .hero-photo img.loaded{ opacity:1; }
+  @keyframes kenburns{ from{ transform:scale(1.04) translateY(0); } to{ transform:scale(1.13) translateY(-1.5%); } }
+  .hero-photo::after{ content:""; position:absolute; inset:0; background:
+      linear-gradient(180deg, rgba(15,14,12,0.42) 0%, rgba(15,14,12,0.5) 40%, rgba(15,14,12,0.72) 100%),
+      radial-gradient(65% 55% at 50% 45%, rgba(10,9,8,0.45), rgba(10,9,8,0) 72%); }
+  @media(prefers-reduced-motion: reduce){ .hero-photo img{ animation:none; } }
+  .hero-panel{ position:relative; z-index:2; max-width:720px; margin:0 auto; text-align:center; }
+  .hero h1{ font-size:56px; line-height:1.08; color:#fff; text-shadow:0 2px 20px rgba(0,0,0,0.6); }
+  .hero p.sub{ margin-top:20px; font-size:17px; color:#EDE7D8; text-shadow:0 1px 12px rgba(0,0,0,0.55); }
+  .hero-ctas{ margin-top:30px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
+  /* real trust-badge seals from the live site, already transparent, no boxing needed */
+  .hero-badges{ margin-top:32px; display:flex; gap:30px; flex-wrap:wrap; justify-content:center; align-items:center; }
+  .hero-badges img{ height:64px; width:auto; opacity:0.95; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.4)); }
+  /* the 100% Satisfaction seal is dark-on-transparent and disappears against a dark photo; give it a white halo so it reads */
+  .hero-badges img.needs-glow{ filter:drop-shadow(0 0 0 white) drop-shadow(0 0 2px white) drop-shadow(0 0 2px white) drop-shadow(0 4px 8px rgba(0,0,0,0.5)); }
+  @media(max-width:700px){ .hero-badges img{ height:46px; } .hero-badges{ gap:18px; margin-top:24px; } }
+  .side-ribbon{ position:fixed; top:50%; right:0; transform:translateY(-50%) rotate(180deg); writing-mode:vertical-rl;
+    background:var(--brass); color:var(--charcoal); font-weight:700; font-size:12.5px; letter-spacing:0.08em;
+    padding:20px 10px; z-index:70; text-transform:uppercase; box-shadow:-4px 0 16px rgba(0,0,0,0.15); }
+  .side-ribbon:hover{ background:var(--brass-light,#c9a56a); }
+  @media(max-width:900px){ .hero{ min-height:82vh; } .hero h1{ font-size:33px; } .side-ribbon{ display:none; } }
+
+  /* ===== TRUST/LICENSE STRIP : labeled values, not icon rows ===== */
+  .value-strip{ background:var(--charcoal); color:#fff; padding:0; }
+  .value-grid{ display:grid; grid-template-columns:repeat(5,1fr); }
+  .value-cell{ padding:28px 22px; border-right:1px solid rgba(255,255,255,0.1); }
+  .value-cell:last-child{ border-right:none; }
+  .value-cell .k{ font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+  .value-cell .k::before{ content:"◆"; font-size:8px; }
+  .value-cell .v{ font-family:'Playfair Display',serif; font-size:18px; }
+  @media(max-width:980px){ .value-grid{ grid-template-columns:1fr 1fr 1fr; } .value-cell{ border-bottom:1px solid rgba(255,255,255,0.1); } }
+  @media(max-width:640px){ .value-grid{ grid-template-columns:1fr 1fr; } }
+
+  /* ===== INTRO : asymmetric 58/42 split, cycling arch-shaped photo stage ===== */
+  .intro-grid{ display:grid; grid-template-columns:1.15fr 1fr; gap:70px; align-items:center; }
+
+  .intro-stage{ position:relative; padding:14px 22px 34px 0; }
+  .intro-frame-deco{ position:absolute; top:28px; left:22px; right:-14px; bottom:8px;
+    background:linear-gradient(155deg, var(--brass) 0%, var(--brown) 100%);
+    border-radius:120px 120px 10px 10px; z-index:0; }
+  .intro-cycler{ position:relative; aspect-ratio:4/5; border-radius:120px 120px 10px 10px; overflow:hidden; z-index:1;
+    box-shadow:0 30px 50px -20px rgba(29,29,27,0.4); }
+  .cyc-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0;
+    transition:opacity 1.4s ease, transform 6s ease; transform:scale(1.06); }
+  .cyc-img.active{ opacity:1; transform:scale(1); z-index:1; }
+  .intro-cycler::after{ content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+    background:linear-gradient(180deg, rgba(29,29,27,0) 55%, rgba(29,29,27,0.28) 100%); }
+
+  .intro-corner{ position:absolute; width:26px; height:26px; border-color:var(--brass); z-index:2; }
+  .intro-corner.tl{ top:0; left:44px; border-top:3px solid var(--brass); border-left:3px solid var(--brass); }
+  .intro-corner.br{ bottom:20px; right:8px; border-bottom:3px solid var(--brass); border-right:3px solid var(--brass); }
+  .intro-corner.tr, .intro-corner.bl{ display:none; }
+
+  .intro-dots{ position:absolute; left:0; bottom:8px; z-index:3; display:flex; gap:8px; }
+  .intro-dots span{ width:8px; height:8px; border-radius:50%; background:rgba(29,29,27,0.25); cursor:pointer; transition:background .2s ease, transform .2s ease; }
+  .intro-dots span.active{ background:var(--brass); transform:scale(1.25); }
+
+  .intro-badge{ position:absolute; bottom:-14px; right:-8px; background:var(--ivory); border:1px solid var(--line);
+    padding:20px 24px; border-radius:8px; box-shadow:0 20px 40px -18px rgba(29,29,27,0.35); z-index:3; }
+  .intro-badge .n{ font-family:'Playfair Display',serif; font-size:28px; color:var(--brown); }
+  .intro-badge .l{ font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:#5c554a; margin-top:2px; }
+
+  .intro-checklist{ list-style:none; margin-top:24px; display:flex; flex-direction:column; gap:14px; }
+  .intro-checklist li{ display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#3a352c; }
+  .intro-checklist svg{ width:18px; height:18px; stroke:var(--cypress); flex-shrink:0; margin-top:1px; }
+
+  @media(max-width:900px){
+    .intro-grid{ grid-template-columns:1fr; gap:64px; }
+    .intro-badge{ right:auto; left:20px; }
+    .intro-stage{ padding:14px 16px 34px 0; }
+  }
+
+  /* ===== FENCE TYPES : featured + list hybrid, not a uniform grid ===== */
+  .fence-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:36px; flex-wrap:wrap; }
+  .fence-head-text{ flex:1; min-width:280px; }
+  .fence-head-cta{ display:flex; align-items:center; gap:16px; padding:20px 24px; border:1px solid var(--line); border-radius:10px;
+    background:var(--ivory-2); flex-shrink:0; text-decoration:none; transition:background .2s ease, border-color .2s ease, transform .2s ease; }
+  .fence-head-cta:hover{ background:var(--white); border-color:var(--brass); transform:translateY(-2px); }
+  .fence-head-cta .num{ font-family:'Playfair Display',serif; font-size:38px; color:var(--brass); line-height:1; }
+  .fence-head-cta .label{ font-size:13.5px; font-weight:600; color:var(--charcoal); line-height:1.35; }
+  .fence-head-cta .label small{ display:block; font-weight:400; color:#5c554a; font-size:11.5px; margin-top:3px; }
+  .fence-head-cta .arrow{ width:16px; height:16px; stroke:var(--brass); flex-shrink:0; transition:transform .2s ease; }
+  .fence-head-cta:hover .arrow{ transform:translateX(4px); }
+  @media(max-width:700px){ .fence-head-cta{ width:100%; } }
+
+  .fence-hybrid{ margin-top:36px; display:grid; grid-template-columns:1.1fr 1fr; gap:26px; }
+  .fence-featured{ position:relative; border-radius:10px; min-height:520px; display:block; }
+  .fence-featured-stage{ position:absolute; inset:0; border-radius:10px; overflow:hidden; perspective:1600px; }
+  .fence-featured-face{ position:absolute; inset:0; transform-origin:left center; backface-visibility:hidden;
+    transform:rotateY(0deg); transition:transform .42s cubic-bezier(.5,0,.2,1); will-change:transform; }
+  .fence-featured-face.no-transition{ transition:none; }
+  .fence-featured-face.swing-open{ transform:rotateY(-104deg); }
+  .fence-featured-face.swing-closed-start{ transform:rotateY(104deg); }
+  .fence-featured-face.photo::after{ background:linear-gradient(180deg, rgba(29,29,27,0) 30%, rgba(29,29,27,0.55) 68%, rgba(29,29,27,0.86) 100%); }
+  .fence-featured .content{ position:absolute; left:0; right:0; bottom:0; padding:32px; color:#fff; z-index:3; }
+  .fence-featured h3{ font-size:28px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.55); transition:opacity .2s ease; }
+  .fence-featured p{ font-size:14.5px; color:#f1ecdd; max-width:340px; margin-top:8px; text-shadow:0 1px 6px rgba(0,0,0,0.6); transition:opacity .2s ease; }
+  .fence-featured:hover .fence-featured-face.photo img{ transform:scale(1.06); }
+  .fence-featured .content.swap-out{ opacity:0; }
+  @media(prefers-reduced-motion:reduce){ .fence-featured-face{ transition:opacity .3s ease; } }
+
+  .fence-spin-badge{ position:absolute; top:-30px; right:26px; width:96px; height:96px; z-index:4; pointer-events:none; }
+  .fence-spin-badge svg.ring{ width:100%; height:100%; animation:fenceSpin 17s linear infinite; }
+  .fence-spin-badge text{ fill:var(--ivory); font-family:inherit; }
+  .fence-spin-badge-center{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+  .fence-spin-badge-center::before{ content:''; position:absolute; inset:17px; border-radius:50%; background:var(--brass);
+    box-shadow:0 8px 20px rgba(29,29,27,0.35); }
+  .fence-spin-badge-center svg{ position:relative; width:18px; height:18px; stroke:var(--charcoal); }
+  @keyframes fenceSpin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+  @media(prefers-reduced-motion:reduce){ .fence-spin-badge svg.ring{ animation:none; } }
+  @media(max-width:900px){ .fence-spin-badge{ display:none; } }
+
+  .fence-list{ display:flex; flex-direction:column; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .fence-list-item{ display:flex; align-items:center; gap:18px; padding:18px 22px; border-bottom:1px solid var(--line);
+    background:var(--white); transition:background .2s ease, padding-left .2s ease; width:100%; text-align:left;
+    font:inherit; color:inherit; cursor:pointer; }
+  .fence-list-item:last-child{ border-bottom:none; }
+  .fence-list-item:hover, .fence-list-item:focus-visible{ background:var(--ivory-2); padding-left:28px; }
+  .fence-list-item.active{ background:var(--ivory-2); border-left:3px solid var(--brass); padding-left:19px; }
+  .fence-list-thumb{ width:64px; height:64px; border-radius:8px; overflow:hidden; flex-shrink:0; position:relative; transition:transform .3s ease; }
+  .fence-list-item:hover .fence-list-thumb, .fence-list-item.active .fence-list-thumb{ transform:rotate(-4deg) scale(1.08); }
+  .fence-list-text{ flex:1; }
+  .fence-list-text h4{ font-family:'Playfair Display',serif; font-size:17px; margin-bottom:3px; }
+  .fence-list-text p{ font-size:12.5px; color:#5c554a; }
+  .fence-list-item .arrow{ width:16px; height:16px; stroke:var(--brass); flex-shrink:0; transition:transform .2s ease; }
+  .fence-list-item:hover .arrow, .fence-list-item.active .arrow{ transform:translateX(4px); }
+  @media(max-width:900px){ .fence-hybrid{ grid-template-columns:1fr; } .fence-featured{ min-height:320px; } }
+
+  /* ===== HONEST NUMBERS BAND : picket-shaped flip cards, icon side to number side ===== */
+  .numbers-band{ background:var(--ivory-2); position:relative; overflow:hidden; }
+  .numbers-bg{ position:absolute; inset:-20px; z-index:0; }
+  .numbers-bg img{ width:100%; height:100%; object-fit:cover; filter:blur(11px) saturate(0.95); transform:scale(1.1); }
+  .numbers-band > .wrap{ position:relative; z-index:1; }
+  .numbers-head{ display:flex; justify-content:space-between; align-items:center; gap:36px; flex-wrap:wrap; }
+  .numbers-head-text{ flex:1; min-width:280px; background:var(--white); border-radius:12px; padding:32px 36px;
+    box-shadow:0 16px 40px rgba(29,29,27,0.14); }
+  .numbers-head-deco{ flex:0 0 320px; height:150px; }
+  .numbers-head-deco svg{ width:100%; height:100%; display:block; }
+  @media(max-width:900px){ .numbers-head-deco{ display:none; } }
+
+  .numbers-flipline{ margin-top:56px; display:flex; gap:18px; }
+  .flip-card{ flex:1; height:190px; perspective:1300px; filter:drop-shadow(0 10px 16px rgba(29,29,27,0.16)); }
+  .flip-inner{ position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .9s cubic-bezier(.4,0,.2,1); }
+  .flip-face{ position:absolute; inset:0; backface-visibility:hidden; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; padding:16px; clip-path:polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%); }
+  .flip-front{ background:var(--charcoal); }
+  .flip-front svg{ width:24px; height:24px; stroke:var(--brass); fill:none; stroke-width:1.6; margin-bottom:10px; margin-top:14px; }
+  .flip-tag{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#cfc6ae; }
+  .flip-back{ background:var(--white); border:1px solid var(--line); transform:rotateY(180deg); padding-top:32px; }
+  .flip-value{ font-family:'Playfair Display',serif; font-size:36px; color:var(--brown); line-height:1; }
+  .flip-label{ font-size:12px; color:#5c554a; margin-top:8px; text-align:center; max-width:140px; }
+  .flip-card:nth-child(1) .flip-inner{ transition-delay:0s; }
+  .flip-card:nth-child(2) .flip-inner{ transition-delay:.12s; }
+  .flip-card:nth-child(3) .flip-inner{ transition-delay:.24s; }
+  .flip-card:nth-child(4) .flip-inner{ transition-delay:.36s; }
+  .flip-card:nth-child(5) .flip-inner{ transition-delay:.48s; }
+  .numbers-flipline [data-reveal].in .flip-inner{ transform:rotateY(180deg); }
+  .numbers-flipline .flip-card:hover .flip-inner{ transform:rotateY(0deg); transition-delay:0s; }
+  @media(prefers-reduced-motion:reduce){
+    .flip-inner{ transition:none; transform:rotateY(180deg) !important; }
+    .numbers-flipline .flip-card:hover .flip-inner{ transform:rotateY(180deg) !important; }
+  }
+  @media(max-width:900px){ .numbers-flipline{ flex-wrap:wrap; row-gap:22px; } .flip-card{ flex:0 0 calc(50% - 9px); height:170px; } }
+
+  /* ===== GATES : full-bleed band with gate-opening reveal ===== */
+  .gates{ background:var(--charcoal); color:#fff; position:relative; }
+  .gates-grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:0; align-items:stretch; }
+  .gates-text{ padding:80px 60px; display:flex; flex-direction:column; justify-content:center; }
+  .gates .eyebrow{ color:var(--brass); } .gates .eyebrow::before{ background:var(--brass); }
+  .gates h2{ color:#fff; font-size:36px; margin-top:14px; }
+  .gates p{ color:#cfc9ba; margin-top:16px; font-size:15.5px; max-width:420px; }
+  .gates-ctas{ margin-top:28px; display:flex; gap:14px; flex-wrap:wrap; }
+  .gates-photo{ position:relative; aspect-ratio:auto; min-height:440px; }
+  @media(max-width:900px){ .gates-grid{ grid-template-columns:1fr; } .gates-text{ padding:50px 28px; } .gates-photo{ min-height:300px; } }
+
+  /* ===== WHY US : large stacked panels, one per scroll, alternating sides ===== */
+  .why-band{ padding-bottom:0; }
+  .why-band-head{ padding-bottom:8px; display:flex; justify-content:space-between; align-items:center; gap:36px; flex-wrap:wrap; }
+  .why-band-head-text{ flex:1; min-width:280px; }
+  .why-preview{ flex:0 0 auto; display:flex; gap:14px; }
+  .why-preview-icon{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .why-preview-icon .circ{ width:48px; height:48px; border-radius:50%; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; }
+  .why-preview-icon svg{ width:20px; height:20px; stroke:var(--brass); fill:none; stroke-width:1.6; }
+  .why-preview-icon span{ font-size:10.5px; letter-spacing:0.04em; color:#8a8272; text-align:center; }
+  @media(max-width:700px){ .why-preview{ display:none; } }
+  .why-panels{ margin-top:20px; }
+  .why-panel{ position:relative; overflow:hidden; border-top:1px solid var(--line); }
+  .why-panel:last-child{ border-bottom:1px solid var(--line); }
+  .why-panel-bg{ position:absolute; inset:0; z-index:0; }
+  .why-panel-bg img{ width:100%; height:100%; object-fit:cover; }
+  .why-panel-inner{ position:relative; z-index:1; padding:44px 0; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:32px; min-height:260px; }
+  .why-panel:nth-child(even) .why-panel-inner{ direction:rtl; } .why-panel:nth-child(even) .why-panel-inner > *{ direction:ltr; }
+  .why-panel-ghost{ font-family:'Playfair Display',serif; font-size:min(16vw,140px); line-height:1; color:rgba(255,255,255,0.35);
+    -webkit-text-stroke:2px rgba(176,138,82,0.95); text-stroke:2px rgba(176,138,82,0.95);
+    text-align:center; user-select:none; pointer-events:none; }
+  .why-panel-content{ max-width:400px; background:var(--white); border-radius:10px; padding:24px 26px; box-shadow:0 10px 26px rgba(29,29,27,0.14); }
+  .why-panel:nth-child(even) .why-panel-content{ background:var(--ivory-2); }
+  .why-panel-badge{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%;
+    border:1.5px solid var(--brass); background:var(--white); margin-bottom:14px; }
+  .why-panel-badge svg{ width:18px; height:18px; stroke:var(--brass); fill:none; stroke-width:1.6; }
+  .why-panel-content h3{ font-size:21px; margin-bottom:8px; }
+  .why-panel-content p{ font-size:14px; color:#4a453b; margin-bottom:14px; }
+  .why-row-tag{ display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border:1px solid var(--line);
+    border-radius:30px; font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--brown);
+    background:var(--white); }
+  .why-panel:nth-child(even) .why-row-tag{ background:var(--ivory-2); }
+  .why-row-tag svg{ width:13px; height:13px; stroke:var(--brass); fill:none; stroke-width:2; }
+  @media(max-width:900px){
+    .why-panel-inner{ grid-template-columns:1fr; gap:16px; padding:32px 0; min-height:0; }
+    .why-panel:nth-child(even) .why-panel-inner{ direction:ltr; }
+    .why-panel-ghost{ font-size:22vw; order:-1; }
+  }
+
+  /* ===== CLIMATE : asymmetric bento, per-item deep link ===== */
+  .climate{ background:var(--charcoal); color:#fff; }
+  .climate .eyebrow{ color:var(--brass); } .climate .eyebrow::before{ background:var(--brass); }
+  .climate-head{ display:flex; justify-content:space-between; align-items:center; gap:36px; flex-wrap:wrap; }
+  .climate-head-text{ flex:1; min-width:280px; }
+  .climate-head-stat{ flex:0 0 auto; display:flex; align-items:center; gap:14px; padding:16px 24px; border:1px solid rgba(255,255,255,0.14); border-radius:50px; }
+  .climate-head-stat .num{ font-family:'Playfair Display',serif; font-size:34px; color:var(--brass); line-height:1; }
+  .climate-head-stat .label{ font-size:11.5px; font-weight:600; letter-spacing:0.04em; color:#c9c2ae; text-transform:uppercase; max-width:110px; }
+  @media(max-width:700px){ .climate-head-stat{ display:none; } }
+  .bento{ margin-top:50px; display:grid; grid-template-columns:1.3fr 1fr 1fr; grid-template-rows:auto auto; gap:22px; }
+  .bento-item{ background:var(--charcoal-2); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:30px; }
+  .bento-item.lead{ grid-row:span 2; display:flex; flex-direction:column; justify-content:center; }
+  .bento-icon{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%;
+    border:1.5px solid var(--brass); margin-bottom:16px; }
+  .bento-icon svg{ width:17px; height:17px; stroke:var(--brass); fill:none; stroke-width:1.6; }
+  .bento-item h4{ font-family:'Playfair Display',serif; font-size:22px; color:#fff; margin-bottom:10px; }
+  .bento-item.lead h4{ font-size:27px; }
+  .bento-item p{ font-size:14px; color:#c9c2ae; }
+  .bento-item .go{ margin-top:14px; display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--brass); }
+  .bento-item .go svg{ width:12px; height:12px; }
+  @media(max-width:900px){ .bento{ grid-template-columns:1fr 1fr; } .bento-item.lead{ grid-column:span 2; grid-row:auto; } }
+  @media(max-width:600px){ .bento{ grid-template-columns:1fr; } .bento-item.lead{ grid-column:auto; } }
+
+  /* ===== GALLERY : numbered masonry ===== */
+  .gallery-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:36px; flex-wrap:wrap; }
+  .gallery-head-text{ flex:1; min-width:280px; }
+  .gallery-filters{ margin-top:0; flex:0 1 380px; display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+  .gfilter{ padding:9px 18px; border-radius:30px; border:1px solid var(--line); font-size:13px; font-weight:500; background:var(--white); cursor:pointer; transition:background .2s, color .2s, border-color .2s; }
+  .gfilter.active, .gfilter:hover{ background:var(--charcoal); color:#fff; border-color:var(--charcoal); }
+  .masonry{ margin-top:30px; column-count:3; column-gap:20px; }
+  .g-item{ break-inside:avoid; margin-bottom:20px; border-radius:10px; overflow:hidden; position:relative; transition:transform .35s ease, box-shadow .35s ease; }
+  .g-item:hover{ transform:translateY(-6px); box-shadow:0 26px 46px -20px rgba(29,29,27,0.4); }
+  .g-item:hover .photo img{ transform:scale(1.08); }
+  .g-num{ position:absolute; top:14px; left:14px; z-index:2; width:34px; height:34px; border-radius:50%;
+    background:rgba(245,241,232,0.92); color:var(--charcoal); font-family:'Playfair Display',serif; font-size:14px;
+    display:flex; align-items:center; justify-content:center; }
+  .g-cap{ position:absolute; left:14px; bottom:14px; z-index:2; color:#fff; }
+  .g-cap b{ display:block; font-size:13.5px; letter-spacing:0.03em; } .g-cap span{ font-size:12px; color:#e6dfcc; }
+  @media(max-width:900px){ .masonry{ column-count:2; } } @media(max-width:560px){ .masonry{ column-count:1; } }
+
+  /* ===== RES/COMM : unequal split ===== */
+  .rc-split{ display:grid; grid-template-columns:1.2fr 1fr; gap:2px; background:var(--line); padding-top:0; padding-bottom:0; }
+  #projects{ padding-top:36px; padding-bottom:0; }
+  .rc-col{ background:var(--white); padding:64px 48px; }
+  .rc-col .rc-photo{ height:300px; border-radius:8px; margin-bottom:28px; }
+  .rc-col h3{ font-size:27px; } .rc-col p{ font-size:15px; color:#4a453b; margin-top:12px; max-width:400px; } .rc-col .btn{ margin-top:22px; }
+  @media(max-width:900px){ .rc-split{ grid-template-columns:1fr; } .rc-col{ padding:44px 28px; } }
+
+  /* ===== PROCESS : vertical zigzag, not equal cards ===== */
+  .process-band{ position:relative; overflow:hidden; }
+  .process-bg{ position:absolute; inset:0; z-index:0; }
+  .process-bg img{ width:100%; height:100%; object-fit:cover; }
+  .process-band > .wrap{ position:relative; z-index:1; }
+  .process-head{ display:flex; justify-content:space-between; align-items:center; gap:36px; flex-wrap:wrap; }
+  .process-head-text{ flex:1; min-width:280px; background:var(--ivory); border-radius:12px; padding:28px 32px; box-shadow:0 16px 40px rgba(29,29,27,0.18); }
+  .process-head-stat{ flex:0 0 auto; display:flex; align-items:center; gap:14px; padding:16px 24px; background:var(--ivory); border-radius:50px; box-shadow:0 10px 26px rgba(29,29,27,0.18); }
+  .process-head-stat .num{ font-family:'Playfair Display',serif; font-size:34px; color:var(--brass); line-height:1; }
+  .process-head-stat .label{ font-size:11.5px; font-weight:600; letter-spacing:0.04em; color:var(--charcoal); text-transform:uppercase; max-width:90px; }
+  @media(max-width:700px){ .process-head-stat{ display:none; } }
+  .zig-process{ margin-top:56px; position:relative; }
+  .zig-process::before{ content:""; position:absolute; top:0; bottom:0; left:50%; width:1px; background:rgba(29,29,27,0.15); }
+  .zig-row{ display:grid; grid-template-columns:1fr 60px 1fr; align-items:center; gap:0; margin-bottom:20px; }
+  .zig-row .side{ padding:24px 40px; }
+  .zig-row .side.empty{ visibility:hidden; }
+  .zig-row .side:not(.empty){ background:var(--white); border-radius:10px; box-shadow:0 10px 24px rgba(29,29,27,0.14); }
+  .zig-row .dot{ width:52px; height:52px; border-radius:50%; background:var(--charcoal); color:var(--brass);
+    font-family:'Playfair Display',serif; font-size:19px; display:flex; align-items:center; justify-content:center; margin:0 auto; z-index:2; position:relative; }
+  .zig-row h3{ font-size:19px; margin-bottom:8px; } .zig-row p{ font-size:14px; color:#4a453b; }
+  @media(max-width:800px){
+    .zig-process::before{ left:26px; }
+    .zig-row{ grid-template-columns:52px 1fr; }
+    .zig-row .dot{ margin:0; }
+    .zig-row .side{ padding:16px 18px; grid-column:2; margin-left:14px; }
+    .zig-row .side.empty{ display:none; }
+  }
+
+  /* ===== LOOK GRID ("what do you need") ===== */
+  .look-row{ margin-top:52px; display:flex; flex-wrap:wrap; gap:16px; }
+  .look-pill{ flex:1; min-width:190px; display:flex; align-items:center; gap:16px; padding:20px 22px; border:1px solid var(--line);
+    border-radius:50px; background:var(--white); transition:background .25s ease, border-color .25s ease, transform .25s ease; }
+  .look-pill:hover{ background:var(--charcoal); border-color:var(--charcoal); transform:translateY(-3px); }
+  .look-pill-icon{ flex-shrink:0; width:44px; height:44px; border-radius:50%; background:var(--ivory-2); display:flex; align-items:center; justify-content:center; transition:background .25s ease; }
+  .look-pill:hover .look-pill-icon{ background:var(--brass); }
+  .look-pill-icon svg{ width:20px; height:20px; stroke:var(--brass); fill:none; stroke-width:1.7; transition:stroke .25s ease; }
+  .look-pill:hover .look-pill-icon svg{ stroke:var(--charcoal); }
+  .look-pill h4{ font-family:'Playfair Display',serif; font-size:16.5px; color:var(--charcoal); transition:color .25s ease; }
+  .look-pill:hover h4{ color:#fff; }
+  .look-pill p{ font-size:11.5px; color:#8a8272; margin-top:2px; transition:color .25s ease; }
+  .look-pill:hover p{ color:#cfc6ae; }
+  @media(max-width:700px){ .look-row{ flex-direction:column; } .look-pill{ min-width:0; } }
+
+  /* ===== REVIEWS : rating + statement + photo, then a card row ===== */
+  .reviews-top{ margin-top:20px; display:grid; grid-template-columns:1fr 0.9fr; gap:56px; align-items:center; }
+  .rating-row{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .stars{ color:var(--brass); font-size:20px; letter-spacing:2px; }
+  .rating-row .num{ font-family:'Playfair Display',serif; font-size:22px; }
+  .reviews-top h2{ margin-top:18px; }
+  .reviews-photo{ aspect-ratio:4/3; border-radius:16px; }
+  @media(max-width:900px){ .reviews-top{ grid-template-columns:1fr; gap:28px; } .reviews-photo{ order:-1; } }
+
+  .review-cards{ margin-top:50px; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .review-card{ background:var(--white); border:1px solid var(--line); border-radius:14px; padding:30px; }
+  .review-card .rc-stars{ color:var(--brass); font-size:14px; letter-spacing:2px; margin-bottom:14px; display:block; }
+  .review-card p{ font-size:15px; color:var(--charcoal); line-height:1.55; }
+  .review-card .who-row{ margin-top:22px; padding-top:18px; border-top:1px solid var(--line); display:flex; align-items:center; gap:12px; }
+  .review-card .avatar{ width:38px; height:38px; border-radius:50%; background:var(--ivory-2); display:flex; align-items:center;
+    justify-content:center; font-family:'Playfair Display',serif; font-size:15px; color:var(--brass); flex-shrink:0; }
+  .review-card .who{ font-weight:600; font-size:13.5px; color:var(--charcoal); }
+  .review-card .who-sub{ font-size:11.5px; color:#8a8272; margin-top:1px; }
+  @media(max-width:800px){ .review-cards{ grid-template-columns:1fr; } }
+
+  /* ===== WARRANTY ===== */
+  .warranty{ background:var(--charcoal); color:#fff; }
+  .warranty .eyebrow{ color:var(--brass); } .warranty .eyebrow::before{ background:var(--brass); }
+  .warranty h2{ color:#fff; }
+  .warranty-grid{ margin-top:48px; display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+  .warranty-item svg{ width:30px; height:30px; stroke:var(--brass); margin-bottom:16px; }
+  .warranty-item h4{ font-size:16px; margin-bottom:8px; color:#fff; font-family:'Inter',sans-serif; font-weight:600; }
+  .warranty-item p{ font-size:13.5px; color:#c9c2ae; }
+  @media(max-width:900px){ .warranty-grid{ grid-template-columns:1fr 1fr; } }
+
+  /* ===== SERVICE AREAS ===== */
+  .areas-band{ background:var(--white); }
+  .areas-layout{ display:grid; grid-template-columns:0.9fr 1.3fr; gap:56px; align-items:start; }
+  .areas-text{ position:sticky; top:110px; }
+  .areas-stat{ margin-top:26px; font-size:15px; font-weight:600; color:var(--charcoal); }
+  .areas-stat .num{ font-family:'Playfair Display',serif; font-size:38px; color:var(--brass); margin-right:8px; }
+  .areas-text .btn{ margin-top:24px; }
+  .areas-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .area-card{ display:flex; align-items:center; gap:8px; padding:18px 16px; border:1px solid var(--line); border-radius:12px; background:var(--ivory); font-size:14.5px; font-weight:500; color:var(--charcoal); }
+  .area-card svg{ width:16px; height:16px; stroke:var(--brass); flex-shrink:0; }
+  .area-card.primary{ grid-column:1/-1; background:var(--charcoal); color:#fff; font-size:17px; font-weight:600; justify-content:space-between; }
+  .area-card.primary svg{ stroke:var(--brass); }
+  .area-card-tag{ font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--brass); border:1px solid rgba(176,138,82,0.5); border-radius:20px; padding:5px 12px; }
+  .areas-note{ margin-top:28px; font-size:13.5px; color:#8a8272; max-width:640px; }
+  @media(max-width:900px){ .areas-layout{ grid-template-columns:1fr; gap:30px; } .areas-text{ position:static; } .areas-cards{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ===== BLOG ===== */
+  .blog-band{ background:var(--ivory); }
+  .blog-head-text{ max-width:680px; }
+  .blog-layout{ margin-top:44px; display:grid; grid-template-columns:1.3fr 1fr; gap:26px; }
+  .blog-feature{ display:block; color:inherit; text-decoration:none; background:var(--white); border:1px solid var(--line); border-radius:16px; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease; }
+  .blog-feature:hover{ transform:translateY(-4px); box-shadow:0 18px 34px rgba(29,29,27,0.1); }
+  .blog-feature-photo{ height:280px; }
+  .blog-feature:hover .blog-feature-photo img{ transform:scale(1.06); }
+  .blog-feature-body{ padding:26px 28px 30px; }
+  .blog-feature-body h3{ margin-top:10px; font-size:24px; line-height:1.3; color:var(--charcoal); }
+  .blog-feature-body p{ margin-top:12px; font-size:14.5px; color:#4a453b; line-height:1.55; }
+  .blog-date{ font-size:12px; font-weight:600; letter-spacing:0.06em; color:var(--brass); text-transform:uppercase; }
+  .blog-card-more{ margin-top:18px; font-size:13.5px; font-weight:600; color:var(--charcoal); display:inline-flex; align-items:center; gap:6px; }
+  .blog-card-more svg{ width:14px; height:14px; stroke:currentColor; transition:transform .2s ease; }
+  .blog-feature:hover .blog-card-more svg{ transform:translateX(3px); }
+  .blog-side{ display:flex; flex-direction:column; gap:18px; }
+  .blog-side-item{ flex:1; display:flex; gap:16px; background:var(--white); border:1px solid var(--line); border-radius:14px; overflow:hidden; color:inherit; text-decoration:none; transition:box-shadow .3s ease; }
+  .blog-side-item:hover{ box-shadow:0 14px 28px rgba(29,29,27,0.1); }
+  .blog-side-photo{ width:130px; flex-shrink:0; }
+  .blog-side-body{ padding:16px 18px 16px 0; display:flex; flex-direction:column; justify-content:center; }
+  .blog-side-body h4{ margin-top:6px; font-size:15px; line-height:1.35; color:var(--charcoal); }
+  @media(max-width:900px){ .blog-layout{ grid-template-columns:1fr; } }
+  @media(max-width:560px){ .blog-side-item{ flex-direction:column; } .blog-side-photo{ width:100%; height:160px; } }
+
+  /* ===== INSTAGRAM ===== */
+  .insta-band{ background:var(--white); }
+  .insta-head{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
+  .insta-follow{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; }
+  .insta-carousel{ margin-top:36px; display:flex; align-items:center; gap:14px; }
+  .insta-grid{ flex:1; display:flex; gap:14px; overflow-x:auto; scroll-behavior:smooth; scroll-snap-type:x mandatory; padding-bottom:4px; }
+  .insta-grid::-webkit-scrollbar{ height:5px; } .insta-grid::-webkit-scrollbar-thumb{ background:var(--line); border-radius:10px; }
+  .insta-tile{ position:relative; flex:0 0 auto; width:220px; aspect-ratio:1/1; border-radius:10px; display:block; scroll-snap-align:start; }
+  .insta-tile:hover img{ transform:scale(1.06); }
+  .insta-arrow{ flex-shrink:0; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--white); display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--charcoal); transition:background .2s, color .2s; }
+  .insta-arrow:hover{ background:var(--charcoal); color:#fff; }
+  .insta-arrow svg{ width:15px; height:15px; stroke:currentColor; }
+  @media(max-width:560px){ .insta-tile{ width:160px; } }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{ position:relative; padding:130px 0; text-align:center; color:#fff; overflow:hidden; }
+  .final-photo{ position:absolute; inset:0; background:linear-gradient(135deg,#3a4536,#1D1D1B 70%); overflow:hidden; }
+  .final-photo::after{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(0deg, rgba(15,14,12,0.85), rgba(15,14,12,0.62)); }
+  .final-photo img.loaded{ opacity:1 !important; }
+  .final-cta .inner{ position:relative; z-index:2; }
+  .final-cta h2{ color:#fff; font-size:44px; max-width:640px; margin:0 auto 18px; }
+  .final-cta p{ color:#e6dfcc; margin-bottom:32px; }
+  @media(max-width:700px){ .final-cta h2{ font-size:30px; } }
+
+  /* ===== ESTIMATE FORM (inline, inside final-cta) ===== */
+  .estimate-form-card{ margin:36px auto 0; max-width:600px; text-align:left; }
+  .estimate-form-card form{ background:var(--white); border-radius:16px; padding:30px 30px 26px; box-shadow:0 24px 60px rgba(0,0,0,0.35); }
+  .estimate-form-card input[type=text], .estimate-form-card input[type=tel], .estimate-form-card input[type=email], .estimate-form-card textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:8px; font-family:'Inter',sans-serif; font-size:14px; color:var(--charcoal); background:var(--ivory); margin-bottom:12px; box-sizing:border-box;
+  }
+  .estimate-form-card textarea{ resize:vertical; }
+  .ef-row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .ef-row-3{ grid-template-columns:1fr 1fr 1fr; }
+  .ef-scroll{ max-height:320px; overflow-y:auto; margin:6px 0 18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 4px 16px 0; }
+  .ef-group{ margin-bottom:18px; } .ef-group:last-child{ margin-bottom:0; }
+  .ef-label{ font-size:12.5px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#8a8272; margin-bottom:10px; }
+  .ef-pills{ display:flex; flex-wrap:wrap; gap:8px; }
+  .ef-pill{ display:inline-flex; align-items:center; gap:6px; padding:8px 13px; border:1px solid var(--line); border-radius:20px; font-size:13px; color:var(--charcoal); cursor:pointer; background:var(--ivory); }
+  .ef-pill input{ accent-color:var(--brass); }
+  .ef-check{ display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:#6b6656; margin-top:10px; line-height:1.4; cursor:pointer; }
+  .ef-check input{ margin-top:2px; accent-color:var(--brass); flex-shrink:0; }
+  .estimate-form-card input[type=file]{ font-size:13px; color:#6b6656; }
+  .ef-submit{ width:100%; justify-content:center; margin-top:6px; border:none; cursor:pointer; }
+  @media(max-width:560px){ .ef-row, .ef-row-3{ grid-template-columns:1fr; } }
+
+  /* ===== FOOTER ===== */
+  footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px; }
+  .foot-top{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .foot-brand .logo-word{ color:#fff; } .foot-brand p{ margin-top:14px; max-width:280px; color:#a89f8f; }
+  .foot-grid h4{ color:#fff; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px; }
+  .foot-grid a{ display:block; padding:5px 0; color:#a89f8f; } .foot-grid a:hover{ color:var(--brass); }
+  .foot-bottom{ margin-top:26px; padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  @media(max-width:900px){ .foot-top{ grid-template-columns:1fr 1fr; } }
+
+  .sticky-mobile-cta{ display:none; }
+  @media(max-width:700px){
+    .sticky-mobile-cta{ display:flex; position:fixed; bottom:0; left:0; right:0; z-index:90; background:var(--charcoal);
+      padding:12px 16px; gap:10px; box-shadow:0 -8px 24px rgba(0,0,0,0.2); }
+    .sticky-mobile-cta a{ flex:1; text-align:center; padding:13px; border-radius:7px; font-size:13.5px; font-weight:600; }
+    .sticky-mobile-cta .call{ background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.5); }
+    .sticky-mobile-cta .est{ background:var(--brass); color:var(--charcoal); }
+    body{ padding-bottom:64px; }
+  }
+
+  /* ===== BACK TO TOP + CHAT BUBBLE ===== */
+  #toTop{ position:fixed; bottom:24px; right:24px; z-index:80; width:46px; height:46px; border-radius:50%; background:var(--charcoal); color:#fff; border:none;
+    display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 10px 26px rgba(29,29,27,0.28);
+    opacity:0; visibility:hidden; transform:translateY(10px); transition:opacity .25s ease, transform .25s ease, background .2s ease; }
+  #toTop.show{ opacity:1; visibility:visible; transform:translateY(0); }
+  #toTop:hover{ background:var(--brass); }
+  #toTop svg{ width:18px; height:18px; }
+  #chatBubble{ position:fixed; bottom:82px; right:24px; z-index:80; width:54px; height:54px; border-radius:50%; background:#2E6FF2; color:#fff; border:none;
+    display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 12px 28px rgba(46,111,242,0.4); transition:background .2s ease, transform .2s ease; }
+  #chatBubble:hover{ background:#1d5adb; transform:translateY(-2px); }
+  #chatBubble svg{ width:24px; height:24px; }
+  @media(max-width:700px){ #toTop{ bottom:84px; } #chatBubble{ bottom:142px; } }
+</style>
+</head>
+<body>
+
+<div id="devnote"><b>Concept G: Editorial Variety.</b> Built after reviewing 3 reference sites in a different niche (bathrooms/kitchens) for inspiration on section variety, not copied. Every section here uses a genuinely different layout mechanic: asymmetric hero panel, a featured+list hybrid instead of a grid, an honest numbers band (real facts only), an editorial numbered list, a bento-box climate section, and a rating-plus-photo header above the review cards. Closes itself shortly.</div>
+
+<header id="siteHeader">
+  <nav>
+    <a class="logo" href="/" aria-label="Big Easy Fence, home">
+      <img src="_assets/big-easy-fence-logo3.png" alt="Big Easy Fence logo" style="height:44px; width:auto;">
+    </a>
+    <div class="navlinks">
+      <a href="/fence-types/">Fences</a>
+      <a href="/fence-types/automatic-gates/">Gates</a>
+      <a href="/services/residential/">Residential</a>
+      <a href="/services/commercial/">Commercial</a>
+      <a href="/service-areas/">Service Areas</a>
+      <a href="/gallery/">Projects</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="navcta">
+      <span class="phone">504-384-8207</span>
+      <a class="btn btn-primary" href="/contact/">Get a Free Estimate</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </nav>
+  <div id="mobileMenu" style="flex-direction:column; padding:8px 20px 20px; gap:4px; background:var(--ivory); border-top:1px solid var(--line);">
+    <a href="/fence-types/" style="padding:10px 0;">Fences</a>
+    <a href="/fence-types/automatic-gates/" style="padding:10px 0;">Gates</a>
+    <a href="/services/residential/" style="padding:10px 0;">Residential</a>
+    <a href="/services/commercial/" style="padding:10px 0;">Commercial</a>
+    <a href="/service-areas/" style="padding:10px 0;">Service Areas</a>
+    <a href="/gallery/" style="padding:10px 0;">Projects</a>
+    <a href="/contact/" style="padding:10px 0;">Contact</a>
+    <a class="phone" href="tel:5043848207" style="padding:10px 0;">504-384-8207</a>
+  </div>
+</header>
+
+<a class="side-ribbon" href="/contact/">Get a Free Estimate →</a>
+
+<div style="overflow-x:hidden;">
+
+<section class="hero">
+  <div class="hero-photo">
+    <img src="_assets/corn-fence-no-pexels.jpg" alt="Historic ornamental cast-iron fence in the New Orleans French Quarter" loading="eager" onload="this.classList.add('loaded')">
+  </div>
+  <div class="wrap">
+    <div class="hero-panel" data-reveal>
+      <h1>Beautiful Fences<br>Built for New Orleans</h1>
+      <p class="sub">Custom fencing, gates, and outdoor solutions designed to add privacy, security, and curb appeal to New Orleans homes and businesses.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" style="background:var(--brass); color:var(--charcoal);" href="/contact/">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-ghost-light" href="/gallery/">View Our Work</a>
+      </div>
+      <div class="hero-badges" data-reveal>
+        <img class="needs-glow" src="_assets/gurentee-seal.png" alt="100% Satisfaction Guaranteed" loading="lazy">
+        <img src="_assets/pseal.png" alt="Premium Guaranteed" loading="lazy">
+        <img src="_assets/great-customber.png" alt="Great Customer Service" loading="lazy">
+        <img src="_assets/bigeasyfencesseal2.png" alt="Licensed and Insured" loading="lazy">
+        <img src="_assets/Layer-11.png" alt="Trusted" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="value-strip">
+  <div class="wrap value-grid">
+    <div class="value-cell"><div class="k">Estimates</div><div class="v">Free, Written</div></div>
+    <div class="value-cell"><div class="k">Hours</div><div class="v">Mon–Sun, 9–6</div></div>
+    <div class="value-cell"><div class="k">Warranty</div><div class="v">Up to 1 Year</div></div>
+    <div class="value-cell"><div class="k">Coverage</div><div class="v">Residential + Commercial</div></div>
+    <div class="value-cell"><div class="k">License</div><div class="v">Licensed &amp; Insured</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap intro-grid">
+    <div class="intro-stage" data-reveal="left">
+      <div class="intro-frame-deco"></div>
+      <div class="intro-cycler gate-reveal" id="introCycler" data-reveal="left">
+        <img class="cyc-img active" src="_assets/gate-elegant-pexels.jpg" alt="Elegant wrought iron entry gate" loading="lazy" onload="this.classList.add('loaded')">
+        <img class="cyc-img" src="_assets/wrought-iron-fence-pexels.jpg" alt="Ornate wrought iron fence" loading="lazy" onload="this.classList.add('loaded')">
+        <img class="cyc-img" src="_assets/wood-fence-pexels.jpg" alt="Wood privacy fence" loading="lazy" onload="this.classList.add('loaded')">
+        <img class="cyc-img" src="_assets/industrial-fence-brick-pexels.jpg" alt="Steel security fence" loading="lazy" onload="this.classList.add('loaded')">
+        <div class="gate-panel left"></div>
+        <div class="gate-panel right"></div>
+      </div>
+      <div class="intro-corner tl"></div><div class="intro-corner tr"></div>
+      <div class="intro-corner bl"></div><div class="intro-corner br"></div>
+      <div class="intro-badge"><div class="n">6</div><div class="l">Fence Materials</div></div>
+      <div class="intro-dots" id="introDots">
+        <span class="active" data-i="0"></span><span data-i="1"></span><span data-i="2"></span><span data-i="3"></span>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow" data-reveal="right">New Orleans Fence Experts</div>
+      <h2 class="section-title" data-reveal="right">Fencing That Protects Your Property and Complements It</h2>
+      <p class="section-lead" data-reveal="right">Big Easy Fence provides residential and commercial fencing solutions designed around your property's needs, style, and level of security. We serve New Orleans and surrounding Louisiana communities with wood, metal, chain link, wrought iron, aluminum, vinyl, and steel fencing, plus gates and fence repair.</p>
+      <ul class="intro-checklist" data-reveal="right">
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg>Residential and commercial, one crew for both</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg>New Orleans and surrounding Louisiana communities</li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg>A free, written estimate before anything starts</li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:28px;" data-reveal="right">
+        <a class="btn btn-secondary" href="/contact/">Meet Big Easy Fence</a>
+        <a class="btn" style="background:var(--brass); color:var(--charcoal);" href="#estimateForm">Get a Free Estimate</a>
+        <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fences" style="background:var(--white);">
+  <div class="wrap">
+    <div class="fence-head">
+      <div class="fence-head-text">
+        <div class="eyebrow" data-reveal>What We Build</div>
+        <h2 class="section-title" data-reveal>Find the Right Fence for Your Property</h2>
+        <p class="section-lead" data-reveal>From timeless wood to elegant wrought iron and modern aluminum, choose a fence that fits the way you use your property.</p>
+        <div class="cta-pair" data-reveal>
+          <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+        </div>
+      </div>
+      <a class="fence-head-cta" href="/fence-types/" data-reveal="rise">
+        <span class="num">6</span>
+        <span class="label">Fence Materials<small>See every type we install</small></span>
+        <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+    <div class="fence-hybrid">
+      <a class="fence-featured" href="/fence-types/wrought-iron/" id="fenceFeatured" data-reveal="rise">
+        <div class="fence-featured-stage">
+          <div class="fence-featured-face photo" id="fenceFeaturedFace">
+            <img src="_assets/wrought-iron-final.jpg" alt="Ornate wrought iron fence" loading="lazy" onload="this.classList.add('loaded')">
+          </div>
+        </div>
+        <div class="content"><h3>Wrought Iron</h3><p>Ornamental character with lasting security. The fence New Orleans is known for.</p></div>
+        <div class="fence-spin-badge" aria-hidden="true">
+          <svg class="ring" viewBox="0 0 120 120">
+            <defs><path id="fenceSpinPath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text font-size="9.6" letter-spacing="2.4"><textPath href="#fenceSpinPath" startOffset="0%">HOVER TO EXPLORE &#8226; 6 FENCE TYPES &#8226; </textPath></text>
+          </svg>
+          <div class="fence-spin-badge-center"><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+        </div>
+      </a>
+      <div class="fence-list" id="fenceList">
+        <button type="button" class="fence-list-item active stagger-1" data-reveal="rise"
+          data-img="_assets/wrought-iron-final.jpg" data-title="Wrought Iron"
+          data-desc="Ornamental character with lasting security. The fence New Orleans is known for." data-href="/fence-types/wrought-iron/">
+          <div class="fence-list-thumb photo"><img src="_assets/wrought-iron-final.jpg" alt="Ornate wrought iron fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="fence-list-text"><h4>Wrought Iron</h4><p>Ornamental, lasting security.</p></div>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <button type="button" class="fence-list-item stagger-2" data-reveal="rise"
+          data-img="_assets/wood-fence-final.jpg" data-title="Wood Fences"
+          data-desc="Warm, versatile, and ideal for privacy fencing around any property." data-href="/services/residential/wood-fences/">
+          <div class="fence-list-thumb photo"><img src="_assets/wood-fence-final.jpg" alt="Wood privacy fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="fence-list-text"><h4>Wood Fences</h4><p>Warm, versatile, ideal for privacy.</p></div>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <button type="button" class="fence-list-item stagger-3" data-reveal="rise"
+          data-img="_assets/aluminum-fence-final.jpg" data-title="Aluminum"
+          data-desc="Elegant, low-maintenance fencing that holds its finish season after season." data-href="/fence-types/aluminum/">
+          <div class="fence-list-thumb photo"><img src="_assets/aluminum-fence-final.jpg" alt="Modern aluminum fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="fence-list-text"><h4>Aluminum</h4><p>Elegant and low-maintenance.</p></div>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <button type="button" class="fence-list-item stagger-4" data-reveal="rise"
+          data-img="_assets/steel-fence-final.jpg" data-title="Steel"
+          data-desc="Strong, heavy-duty protection for properties that need added security." data-href="/fence-types/steel/">
+          <div class="fence-list-thumb photo"><img src="_assets/steel-fence-final.jpg" alt="Steel security fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="fence-list-text"><h4>Steel</h4><p>Strong protection, added security.</p></div>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <button type="button" class="fence-list-item stagger-5" data-reveal="rise"
+          data-img="_assets/chainlink-fence-final.jpg" data-title="Chain Link"
+          data-desc="Practical, durable, and cost-effective fencing for yards and job sites." data-href="/fence-types/chain-link/">
+          <div class="fence-list-thumb photo"><img src="_assets/chainlink-fence-final.jpg" alt="Chain link fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="fence-list-text"><h4>Chain Link</h4><p>Practical, durable, cost-effective.</p></div>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <button type="button" class="fence-list-item stagger-6" data-reveal="rise"
+          data-img="_assets/vinyl-fence-final.jpg" data-title="Vinyl"
+          data-desc="A clean, bright look with minimal upkeep for years to come." data-href="/fence-types/vinyl/">
+          <div class="fence-list-thumb photo"><img src="_assets/vinyl-fence-final.jpg" alt="White vinyl fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="fence-list-text"><h4>Vinyl</h4><p>Clean look, minimal upkeep.</p></div>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="numbers-band">
+  <div class="numbers-bg" aria-hidden="true"><img src="_assets/Wood-Fence-New-Orleans-LA.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="numbers-head">
+      <div class="numbers-head-text">
+        <div class="eyebrow" data-reveal>Big Easy Fence, Plainly</div>
+        <h2 class="section-title" data-reveal>What We Actually Offer, No Filler Numbers</h2>
+        <p class="section-lead" data-reveal>We're not going to invent a "10,000 fences installed" stat we can't back up. Here's what's actually true.</p>
+        <div class="cta-pair" data-reveal>
+          <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+        </div>
+      </div>
+      <div class="numbers-head-deco" aria-hidden="true" data-reveal="rise">
+        <svg viewBox="0 0 320 150" xmlns="http://www.w3.org/2000/svg">
+          <line x1="6" y1="58" x2="314" y2="58" stroke="#B08A52" stroke-width="3"/>
+          <line x1="6" y1="94" x2="314" y2="94" stroke="#B08A52" stroke-width="3" opacity="0.55"/>
+          <path d="M30 22 L37 36 L37 132 L23 132 L23 36 Z" fill="#1D1D1B" fill-opacity="0.06" stroke="#B08A52" stroke-width="2"/>
+          <path d="M82 22 L89 36 L89 132 L75 132 L75 36 Z" fill="#1D1D1B" fill-opacity="0.06" stroke="#B08A52" stroke-width="2"/>
+          <path d="M134 22 L141 36 L141 132 L127 132 L127 36 Z" fill="#1D1D1B" fill-opacity="0.06" stroke="#B08A52" stroke-width="2"/>
+          <path d="M186 22 L193 36 L193 132 L179 132 L179 36 Z" fill="#1D1D1B" fill-opacity="0.06" stroke="#B08A52" stroke-width="2"/>
+          <path d="M238 22 L245 36 L245 132 L231 132 L231 36 Z" fill="#1D1D1B" fill-opacity="0.06" stroke="#B08A52" stroke-width="2"/>
+          <path d="M290 22 L297 36 L297 132 L283 132 L283 36 Z" fill="#1D1D1B" fill-opacity="0.06" stroke="#B08A52" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+    <div class="numbers-flipline">
+      <div class="flip-card" data-reveal="scale">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <span class="flip-tag">Materials</span>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="flip-value">6</div>
+            <div class="flip-label">Fence Materials Offered</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" data-reveal="scale">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span class="flip-tag">Communities</span>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="flip-value">12</div>
+            <div class="flip-label">Communities Listed</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" data-reveal="scale">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+            <span class="flip-tag">Days Open</span>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="flip-value">7</div>
+            <div class="flip-label">Days a Week Open</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" data-reveal="scale">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/></svg>
+            <span class="flip-tag">Warranty</span>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="flip-value">1</div>
+            <div class="flip-label">Year Warranty, Up To</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" data-reveal="scale">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1.4-1.3-2.5-3-2.5s-3 1.1-3 2.5 1.3 2 3 2 3 .6 3 2-1.3 2.5-3 2.5-3-1.1-3-2.5"/></svg>
+            <span class="flip-tag">Free Estimate</span>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="flip-value">$0</div>
+            <div class="flip-label">Cost for a Written Estimate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gates">
+  <div class="gates-grid">
+    <div class="gates-text">
+      <div class="eyebrow" data-reveal="left">Custom Gates</div>
+      <h2 data-reveal="left">The Right Gate Completes the Property</h2>
+      <p data-reveal="left">From traditional entry gates to automatic gate systems, Big Easy Fence can help create an entrance that balances security, convenience, and curb appeal.</p>
+      <div class="gates-ctas" data-reveal="left">
+        <a class="btn btn-ghost-light" href="/fence-types/automatic-gates/">Explore Gates</a>
+        <a class="btn" style="background:var(--brass); color:var(--charcoal);" href="/contact/">Get an Estimate</a>
+      </div>
+    </div>
+    <div class="photo gates-photo gate-reveal" data-reveal="right">
+      <img src="_assets/gate-charming-pexels.jpg" alt="Custom iron entry gate" loading="lazy" onload="this.classList.add('loaded')">
+      <div class="gate-panel left"></div>
+      <div class="gate-panel right"></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-band" style="background:var(--white);">
+  <div class="wrap why-band-head">
+    <div class="why-band-head-text">
+      <div class="eyebrow" data-reveal>Why Big Easy Fence</div>
+      <h2 class="section-title" data-reveal>Built Around Quality, Designed Around You</h2>
+    </div>
+    <div class="why-preview" aria-hidden="true" data-reveal="rise">
+      <div class="why-preview-icon"><div class="circ"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/></svg></div><span>Materials</span></div>
+      <div class="why-preview-icon"><div class="circ"><svg viewBox="0 0 24 24"><path d="M3 6h6M15 6h6M3 12h12M19 12h2M3 18h9M16 18h5"/><circle cx="11" cy="6" r="2.4"/><circle cx="17" cy="12" r="2.4"/><circle cx="13" cy="18" r="2.4"/></svg></div><span>Options</span></div>
+      <div class="why-preview-icon"><div class="circ"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.5-3.5a5 5 0 01-6.4 6.4L5.5 21.5a2.1 2.1 0 01-3-3L11.8 9.2a5 5 0 016.4-6.4z"/></svg></div><span>Install</span></div>
+      <div class="why-preview-icon"><div class="circ"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><span>Local</span></div>
+    </div>
+  </div>
+  <div class="why-panels">
+    <div class="why-panel">
+      <div class="why-panel-bg" aria-hidden="true"><img src="_assets/wrought-iron-quality-final.jpg" alt="" loading="lazy"></div>
+      <div class="wrap why-panel-inner">
+        <div class="why-panel-ghost" aria-hidden="true" data-reveal="scale">01</div>
+        <div class="why-panel-content" data-reveal="right">
+          <div class="why-panel-badge"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/></svg></div>
+          <h3>Quality Materials</h3>
+          <p>Durable materials selected for long-term performance, not the cheapest option that happens to fit the budget.</p>
+          <div class="why-row-actions">
+            <div class="why-row-tag"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg>Built to Last</div>
+            <div class="cta-pair">
+              <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-panel">
+      <div class="why-panel-bg" aria-hidden="true"><img src="_assets/electric-gates-for-driveways-new-orleans-Big-Easy-Fences.jpg" alt="" loading="lazy"></div>
+      <div class="wrap why-panel-inner">
+        <div class="why-panel-ghost" aria-hidden="true" data-reveal="scale">02</div>
+        <div class="why-panel-content" data-reveal="left">
+          <div class="why-panel-badge"><svg viewBox="0 0 24 24"><path d="M3 6h6M15 6h6M3 12h12M19 12h2M3 18h9M16 18h5"/><circle cx="11" cy="6" r="2.4"/><circle cx="17" cy="12" r="2.4"/><circle cx="13" cy="18" r="2.4"/></svg></div>
+          <h3>Custom Options</h3>
+          <p>Choose the material, height, style, and configuration that fits your property, not a one-size package.</p>
+          <div class="why-row-actions">
+            <div class="why-row-tag"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg>Made for Your Property</div>
+            <div class="cta-pair">
+              <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-panel">
+      <div class="why-panel-bg" aria-hidden="true"><img src="_assets/Commercial-Metal-Fence-Big-Easy-Fences.jpg" alt="" loading="lazy"></div>
+      <div class="wrap why-panel-inner">
+        <div class="why-panel-ghost" aria-hidden="true" data-reveal="scale">03</div>
+        <div class="why-panel-content" data-reveal="right">
+          <div class="why-panel-badge"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.5-3.5a5 5 0 01-6.4 6.4L5.5 21.5a2.1 2.1 0 01-3-3L11.8 9.2a5 5 0 016.4-6.4z"/></svg></div>
+          <h3>Professional Installation</h3>
+          <p>Careful installation from measurement through completion, with a walkthrough before we call it done.</p>
+          <div class="why-row-actions">
+            <div class="why-row-tag"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg>Done Right, Start to Finish</div>
+            <div class="cta-pair">
+              <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-panel">
+      <div class="why-panel-bg" aria-hidden="true"><img src="_assets/french-quarter-arch-pexels.jpg" alt="" loading="lazy"></div>
+      <div class="wrap why-panel-inner">
+        <div class="why-panel-ghost" aria-hidden="true" data-reveal="scale">04</div>
+        <div class="why-panel-content" data-reveal="left">
+          <div class="why-panel-badge"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <h3>Local Experience</h3>
+          <p>Fencing solutions designed for New Orleans-area properties, not a template built for a different climate.</p>
+          <div class="why-row-actions">
+            <div class="why-row-tag"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10l4 4 8-9"/></svg>Local Know-How</div>
+            <div class="cta-pair">
+              <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+              <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div class="gallery-head-text">
+        <div class="eyebrow" data-reveal>Our Work</div>
+        <h2 class="section-title" data-reveal>See What We've Built</h2>
+        <p class="section-lead" data-reveal>Real fencing projects for homes and businesses across the New Orleans area.</p>
+        <div class="cta-pair" data-reveal>
+          <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+        </div>
+      </div>
+      <div class="gallery-filters" data-reveal>
+        <button class="gfilter active">All</button><button class="gfilter">Wood</button><button class="gfilter">Aluminum</button>
+        <button class="gfilter">Iron</button><button class="gfilter">Gates</button><button class="gfilter">Commercial</button>
+      </div>
+    </div>
+    <div class="masonry">
+      <div class="g-item" style="height:300px;" data-reveal="left"><div class="g-num">01</div><div class="photo" style="position:absolute;inset:0;"><img src="_assets/wood-privacy-thuja-pexels.jpg" alt="Wood privacy fence with greenery" loading="lazy" onload="this.classList.add('loaded')"></div><div class="g-cap"><b>Wood Privacy Fence</b><span>New Orleans, LA</span></div></div>
+      <div class="g-item" style="height:320px;" data-reveal="right"><div class="g-num">02</div><div class="photo" style="position:absolute;inset:0;"><img src="_assets/wrought-iron-closeup-pexels.jpg" alt="Close-up of ornate wrought iron fence details" loading="lazy" onload="this.classList.add('loaded')"></div><div class="g-cap"><b>Wrought Iron Fence</b><span>New Orleans, LA</span></div></div>
+      <div class="g-item" style="height:290px;" data-reveal="left"><div class="g-num">03</div><div class="photo" style="position:absolute;inset:0;"><img src="_assets/aluminum-modern-fence-pexels.jpg" alt="Modern aluminum fence" loading="lazy" onload="this.classList.add('loaded')"></div><div class="g-cap"><b>Aluminum Fence</b><span>Metairie, LA</span></div></div>
+      <div class="g-item" style="height:310px;" data-reveal="right"><div class="g-num">04</div><div class="photo" style="position:absolute;inset:0;"><img src="_assets/secure-industrial-gate-pexels.jpg" alt="Commercial metal fence and gate" loading="lazy" onload="this.classList.add('loaded')"></div><div class="g-cap"><b>Commercial Metal Fence</b><span>Greater New Orleans</span></div></div>
+      <div class="g-item" style="height:300px;" data-reveal="left"><div class="g-num">05</div><div class="photo" style="position:absolute;inset:0;"><img src="_assets/corn-fence-no-pexels.jpg" alt="Custom ornamental cast-iron fence detail" loading="lazy" onload="this.classList.add('loaded')"></div><div class="g-cap"><b>Custom Entry Gate</b><span>New Orleans, LA</span></div></div>
+      <div class="g-item" style="height:320px;" data-reveal="right"><div class="g-num">06</div><div class="photo" style="position:absolute;inset:0;"><img src="_assets/chain-link-1.jpg" alt="Chain link security fence" loading="lazy" onload="this.classList.add('loaded')"></div><div class="g-cap"><b>Chain Link Security Fence</b><span>New Orleans, LA</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rc-split">
+  <div class="rc-col">
+    <div class="photo rc-photo" data-reveal="left"><img src="_assets/wood-privacy-thuja-pexels.jpg" alt="Wood privacy fence around a residential yard" loading="lazy" onload="this.classList.add('loaded')" style="object-position:50% 82%;"></div>
+    <div class="eyebrow" data-reveal="left">For Your Home</div>
+    <h3 data-reveal="left" style="margin-top:12px;">Residential Fencing</h3>
+    <p data-reveal="left">Privacy, security, curb appeal, gates, and custom fencing designed around your home.</p>
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;" data-reveal="left">
+      <a class="btn btn-secondary" href="/services/residential/">Explore Residential</a>
+      <a class="btn" style="background:var(--brass); color:var(--charcoal);" href="#estimateForm">Get a Free Estimate</a>
+      <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+    </div>
+  </div>
+  <div class="rc-col">
+    <div class="photo rc-photo" data-reveal="right"><img src="_assets/industrial-fence-brick-pexels.jpg" alt="Commercial property with a metal security fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+    <div class="eyebrow" data-reveal="right">For Your Business</div>
+    <h3 data-reveal="right" style="margin-top:12px;">Commercial Fencing</h3>
+    <p data-reveal="right">Durable fencing, access control, security, gates, and property solutions for businesses.</p>
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;" data-reveal="right">
+      <a class="btn btn-secondary" href="/services/commercial/">Explore Commercial</a>
+      <a class="btn" style="background:var(--brass); color:var(--charcoal);" href="#estimateForm">Get a Free Estimate</a>
+      <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white);">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>Not Sure Where to Start?</div>
+    <h2 class="section-title" data-reveal>What Do You Need for Your Property?</h2>
+    <div class="look-row">
+      <a class="look-pill" href="/services/residential/wood-fences/" data-reveal="rise">
+        <div class="look-pill-icon"><svg viewBox="0 0 24 24"><path d="M3 13c3-6 15-6 18 0M2 21h20"/><circle cx="12" cy="13" r="2.2"/></svg></div>
+        <div><h4>More Privacy</h4><p>Explore privacy fencing</p></div>
+      </a>
+      <a class="look-pill" href="/services/residential/wrought-iron-fence/" data-reveal="rise">
+        <div class="look-pill-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h4>Better Security</h4><p>Explore security fencing</p></div>
+      </a>
+      <a class="look-pill" href="/fence-types/wrought-iron/" data-reveal="rise">
+        <div class="look-pill-icon"><svg viewBox="0 0 24 24"><path d="M12 2l1.8 5.6H20l-4.8 3.5 1.8 5.6L12 13.2l-4.9 3.5 1.8-5.6L4 7.6h6.2z"/></svg></div>
+        <div><h4>More Curb Appeal</h4><p>Explore decorative fencing</p></div>
+      </a>
+      <a class="look-pill" href="/fence-types/automatic-gates/" data-reveal="rise">
+        <div class="look-pill-icon"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12M4 21h16M9 21v-6h6v6"/></svg></div>
+        <div><h4>A New Gate</h4><p>Explore custom and automatic gates</p></div>
+      </a>
+      <a class="look-pill" href="/services/residential/fence-repair/" data-reveal="rise">
+        <div class="look-pill-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.5-3.5a5 5 0 01-6.4 6.4L5.5 21.5a2.1 2.1 0 01-3-3L11.8 9.2a5 5 0 016.4-6.4z"/></svg></div>
+        <div><h4>Fence Repair</h4><p>Restore an existing fence</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="process-band">
+  <div class="process-bg" aria-hidden="true"><img src="_assets/process-band-final.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="process-head">
+      <div class="process-head-text">
+        <div class="eyebrow" data-reveal>How It Works</div>
+        <h2 class="section-title" data-reveal>From Idea to Installation</h2>
+        <div class="cta-pair" data-reveal>
+          <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+        </div>
+      </div>
+      <div class="process-head-stat" aria-hidden="true" data-reveal="rise">
+        <span class="num">4</span>
+        <span class="label">Simple Steps, Start to Finish</span>
+      </div>
+    </div>
+    <div class="zig-process">
+      <div class="zig-row">
+        <div class="side" data-reveal="left"><h3>Tell Us What You Need</h3><p>Request a free estimate and tell us about your property.</p></div>
+        <div class="dot">01</div>
+        <div class="side empty"></div>
+      </div>
+      <div class="zig-row">
+        <div class="side empty"></div>
+        <div class="dot">02</div>
+        <div class="side" data-reveal="right"><h3>Property Assessment</h3><p>We'll evaluate the space, measurements, materials, and project requirements.</p></div>
+      </div>
+      <div class="zig-row">
+        <div class="side" data-reveal="left"><h3>Choose Your Fence</h3><p>Select the material, style, height, and configuration that fits your needs.</p></div>
+        <div class="dot">03</div>
+        <div class="side empty"></div>
+      </div>
+      <div class="zig-row">
+        <div class="side empty"></div>
+        <div class="dot">04</div>
+        <div class="side" data-reveal="right"><h3>Professional Installation</h3><p>Our team completes the project and reviews the finished work with you.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="climate">
+  <div class="wrap">
+    <div class="climate-head">
+      <div class="climate-head-text">
+        <div class="eyebrow" data-reveal>Built for This City</div>
+        <h2 class="section-title" style="color:#fff;" data-reveal>Why New Orleans Fencing Needs a Different Approach</h2>
+        <div class="cta-pair cta-pair-light" data-reveal>
+      <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+    </div>
+      </div>
+      <div class="climate-head-stat" aria-hidden="true" data-reveal="rise">
+        <span class="num">5</span>
+        <span class="label">Local Factors We Plan Around</span>
+      </div>
+    </div>
+    <div class="bento">
+      <div class="bento-item lead" data-reveal="left">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M12 3s7 7.4 7 12a7 7 0 11-14 0c0-4.6 7-12 7-12z"/></svg></div>
+        <h4>Humidity Changes Everything</h4>
+        <p>Standing water at a post base is one of the most common causes of early wood rot in this climate. Material and installation choices matter more here than style does.</p>
+        <a class="go" href="/fence-types/wood/">Wood Fence Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <div class="bento-item" data-reveal="scale">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h4>Termite Pressure</h4><p>Formosan termite pressure is a known factor for untreated wood fencing across the metro.</p>
+      </div>
+      <div class="bento-item" data-reveal="scale">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M3 8h11.5a2.5 2.5 0 100-5M3 16h15.5a2.5 2.5 0 110 5M3 12h9a2 2 0 100-4"/></svg></div>
+        <h4>Hurricane Wind</h4><p>Panel and gate hardware should be rated for storm-season gusts, not just a calm day.</p>
+      </div>
+      <div class="bento-item" data-reveal="scale">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M3 21l4-16 5 4 4-7 5 19H3z"/></svg></div>
+        <h4>Older, Informal Lot Lines</h4><p>Many New Orleans properties were surveyed informally, so a line check is part of the job.</p>
+      </div>
+      <div class="bento-item" data-reveal="scale">
+        <div class="bento-icon"><svg viewBox="0 0 24 24"><path d="M4 21h16M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
+        <h4>Historic-District Rules</h4><p>Some neighborhoods have separate design review for fence height and material.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>Testimonials</div>
+    <div class="reviews-top">
+      <div data-reveal>
+        <div class="rating-row">
+          <span class="stars">★★★★★</span>
+          <span class="num"><span class="count-pop" data-count-to="4.7" data-decimals="1">0.0</span> Average Rating</span>
+          <span style="color:#4a453b;"><span class="count-pop" data-count-to="60">0</span>+ Reviews</span>
+        </div>
+        <h2 class="section-title">A Fence You Stop Worrying About</h2>
+        <a class="btn btn-secondary" href="#" style="margin-top:26px;">Read More Reviews</a>
+      </div>
+      <div class="photo reviews-photo" data-reveal="right"><img src="_assets/reviews-macro-final.jpg" alt="Detail of a padlock securing an iron fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+    </div>
+
+    <div class="review-cards">
+      <div class="review-card" data-reveal="rise">
+        <span class="rc-stars">★★★★★</span>
+        <p>Big Easy Fence did a beautiful job installing our fence for a reasonable price. Their contractors are easy to work with, reliable, and on time. I would highly recommend them!</p>
+        <div class="who-row">
+          <div class="avatar">R</div>
+          <div><div class="who">Mr. Roman</div><div class="who-sub">Customer Testimonial</div></div>
+        </div>
+      </div>
+      <div class="review-card" data-reveal="rise">
+        <span class="rc-stars">★★★★★</span>
+        <p>We love the fence! We were so excited when it was completed. The best fence company around. We'll definitely use them again for future projects.</p>
+        <div class="who-row">
+          <div class="avatar">J</div>
+          <div><div class="who">Mr. John</div><div class="who-sub">Customer Testimonial</div></div>
+        </div>
+      </div>
+      <div class="review-card" data-reveal="rise">
+        <span class="rc-stars">★★★★★</span>
+        <p>Recommended fence contractors in New Orleans. Big Easy Fence did outstanding quality work in installing our fence. I am very satisfied and couldn't be happier!</p>
+        <div class="who-row">
+          <div class="avatar">D</div>
+          <div><div class="who">Mr. David</div><div class="who-sub">Customer Testimonial</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="warranty">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>Built to Last</div>
+    <h2 class="section-title" data-reveal>Built With Details That Matter</h2>
+    <div class="cta-pair cta-pair-light" data-reveal>
+      <a class="cta-btn" href="#estimateForm">Get a Free Estimate <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="cta-phone" href="tel:5043848207"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>504-384-8207</a>
+    </div>
+    <div class="warranty-grid">
+      <div class="warranty-item" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><h4>Commercial-Grade Concrete</h4><p>250 PSI concrete used for fencing jobs.</p></div>
+      <div class="warranty-item" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6"/></svg><h4>Heavy-Duty Hardware</h4><p>All gate hardware is heavy duty.</p></div>
+      <div class="warranty-item" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/></svg><h4>Licensed &amp; Insured</h4><p>Verified business coverage on every job.</p></div>
+      <div class="warranty-item" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><h4>Up to a 1-Year Warranty</h4><p>On fencing and landscaping work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="areas-band">
+  <div class="wrap areas-layout">
+    <div class="areas-text">
+      <div class="eyebrow" data-reveal>Where We Work</div>
+      <h2 class="section-title" data-reveal>Proudly Serving Greater New Orleans</h2>
+      <p class="section-lead" data-reveal>Based in New Orleans, with crews covering the surrounding Louisiana communities below.</p>
+      <div class="areas-stat" data-reveal><span class="num">12</span> Cities &amp; Communities Served</div>
+      <a class="btn btn-secondary" href="/contact/" data-reveal>Check Your City</a>
+    </div>
+    <div class="areas-cards" data-reveal="right">
+      <div class="area-card primary"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 2a6 6 0 016 6c0 4.5-6 10-6 10S4 12.5 4 8a6 6 0 016-6z"/><circle cx="10" cy="8" r="2"/></svg>New Orleans <span class="area-card-tag">Home Base</span></div>
+      <div class="area-card">Abita Springs</div>
+      <div class="area-card">Baton Rouge</div>
+      <div class="area-card">Covington</div>
+      <div class="area-card">Denham Springs</div>
+      <div class="area-card">Donaldsonville</div>
+      <div class="area-card">Gonzales</div>
+      <div class="area-card">Madisonville</div>
+      <div class="area-card">Mandeville</div>
+      <div class="area-card">Prairieville</div>
+      <div class="area-card">Sorrento</div>
+      <div class="area-card">Walker</div>
+    </div>
+  </div>
+  <p class="wrap areas-note" data-reveal>Don't see your city? <a href="/contact/" style="color:var(--charcoal); font-weight:600;">Contact us</a> — we may still be able to help.</p>
+</section>
+
+<section id="blog" class="blog-band">
+  <div class="wrap">
+    <div class="blog-head-text">
+      <div class="eyebrow" data-reveal>From the Blog</div>
+      <h2 class="section-title" data-reveal>Fence Tips &amp; Ideas</h2>
+      <p class="section-lead" data-reveal>Guides and ideas from the Big Easy Fence team to help you plan your next project.</p>
+    </div>
+    <div class="blog-layout">
+      <a class="blog-feature" data-reveal="left" href="https://www.bigeasyfence.com/best-practices-for-protecting-your-fence-against-weather-damage/" target="_blank" rel="noopener">
+        <div class="blog-feature-photo photo"><img src="_assets/blog-weather-damage.jpg" alt="Sealing a wooden fence against weather damage" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-feature-body">
+          <div class="blog-date">Dec 10, 2024</div>
+          <h3>Best Practices for Protecting Your Fence Against Weather Damage</h3>
+          <p>Protect your fence from weather damage with these top tips from Big Easy Fences. Keep your fence strong and durable all year round.</p>
+          <div class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></div>
+        </div>
+      </a>
+      <div class="blog-side" data-reveal="right">
+        <a class="blog-side-item" href="https://www.bigeasyfence.com/fence-ideas-for-mobile-homes/" target="_blank" rel="noopener">
+          <div class="blog-side-photo photo"><img src="_assets/blog-mobile-homes.jpg" alt="White fence idea for a mobile home" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="blog-side-body"><div class="blog-date">Sep 20, 2024</div><h4>Fence Ideas for Mobile Homes</h4></div>
+        </a>
+        <a class="blog-side-item" href="https://www.bigeasyfence.com/popular-house-and-fence-color-combinations/" target="_blank" rel="noopener">
+          <div class="blog-side-photo photo"><img src="_assets/blog-color-combos.jpg" alt="House and fence color combination example" loading="lazy" onload="this.classList.add('loaded')"></div>
+          <div class="blog-side-body"><div class="blog-date">Sep 20, 2024</div><h4>Popular House and Fence Color Combinations</h4></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="instagram" class="insta-band">
+  <div class="wrap">
+    <div class="insta-head">
+      <div>
+        <div class="eyebrow" data-reveal>Social</div>
+        <h2 class="section-title" data-reveal>Follow Us on Instagram</h2>
+      </div>
+      <a class="insta-follow btn btn-secondary" href="https://www.instagram.com/bigeasyfence/" target="_blank" rel="noopener" data-reveal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        @bigeasyfence
+      </a>
+    </div>
+    <div class="insta-carousel">
+      <button type="button" class="insta-arrow insta-arrow-left" aria-label="Scroll left" onclick="document.getElementById('instaTrack').scrollBy({left:-260, behavior:'smooth'})"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg></button>
+      <div class="insta-grid" id="instaTrack">
+        <a class="insta-tile photo" href="https://www.instagram.com/bigeasyfence/" target="_blank" rel="noopener" data-reveal><img src="_assets/wrought-iron-quality-final.jpg" alt="Wrought iron fence project" loading="lazy" onload="this.classList.add('loaded')"></a>
+        <a class="insta-tile photo" href="https://www.instagram.com/bigeasyfence/" target="_blank" rel="noopener" data-reveal><img src="_assets/wood-privacy-thuja-pexels.jpg" alt="Wood privacy fence project" loading="lazy" onload="this.classList.add('loaded')" style="object-position:50% 82%;"></a>
+        <a class="insta-tile photo" href="https://www.instagram.com/bigeasyfence/" target="_blank" rel="noopener" data-reveal><img src="_assets/aluminum-modern-fence-pexels.jpg" alt="Aluminum fence project" loading="lazy" onload="this.classList.add('loaded')"></a>
+        <a class="insta-tile photo" href="https://www.instagram.com/bigeasyfence/" target="_blank" rel="noopener" data-reveal><img src="_assets/secure-industrial-gate-pexels.jpg" alt="Commercial gate project" loading="lazy" onload="this.classList.add('loaded')"></a>
+        <a class="insta-tile photo" href="https://www.instagram.com/bigeasyfence/" target="_blank" rel="noopener" data-reveal><img src="_assets/corn-fence-no-pexels.jpg" alt="Custom entry gate project" loading="lazy" onload="this.classList.add('loaded')"></a>
+        <a class="insta-tile photo" href="https://www.instagram.com/bigeasyfence/" target="_blank" rel="noopener" data-reveal><img src="_assets/chain-link-1.jpg" alt="Chain link fence project" loading="lazy" onload="this.classList.add('loaded')"></a>
+      </div>
+      <button type="button" class="insta-arrow insta-arrow-right" aria-label="Scroll right" onclick="document.getElementById('instaTrack').scrollBy({left:260, behavior:'smooth'})"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3l5 5-5 5"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-photo"><img src="_assets/corn-fence-no-pexels.jpg" alt="Ornamental cast-iron fence in New Orleans" loading="lazy" onload="this.classList.add('loaded')" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease;" onerror="this.style.display='none'"></div>
+  <div class="wrap inner">
+    <h2 data-reveal>Ready for a Better Fence?</h2>
+    <p data-reveal>Tell us about your property below, or call us directly at <a href="tel:5043848207" style="color:#fff; font-weight:600; text-decoration:underline;">504-384-8207</a>.</p>
+    <div id="estimateForm" class="estimate-form-card" data-reveal>
+      <form onsubmit="return false;">
+        <div class="ef-row">
+          <input type="text" placeholder="Full Name *" required>
+          <input type="tel" placeholder="Phone *" required>
+        </div>
+        <input type="email" placeholder="Email *" required>
+        <div class="ef-scroll">
+          <div class="ef-group">
+            <div class="ef-label">Property Type</div>
+            <div class="ef-pills">
+              <label class="ef-pill"><input type="checkbox" name="property_type" value="Residential"> Residential</label>
+              <label class="ef-pill"><input type="checkbox" name="property_type" value="Commercial"> Commercial</label>
+            </div>
+          </div>
+          <div class="ef-group">
+            <div class="ef-label">Fence / Service Type</div>
+            <div class="ef-pills">
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Wood"> Wood</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Vinyl"> Vinyl</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Chain Link"> Chain Link</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Ornamental Steel"> Ornamental Steel</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Aluminum"> Aluminum</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Wrought Iron"> Wrought Iron</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Access Controls"> Access Controls</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Gate Operators"> Gate Operators</label>
+              <label class="ef-pill"><input type="checkbox" name="fence_type" value="Other"> Other</label>
+            </div>
+          </div>
+          <div class="ef-group">
+            <div class="ef-label">Property Address</div>
+            <input type="text" placeholder="Street Address">
+            <div class="ef-row ef-row-3">
+              <input type="text" placeholder="City">
+              <input type="text" placeholder="State">
+              <input type="text" placeholder="ZIP">
+            </div>
+          </div>
+          <div class="ef-group">
+            <div class="ef-label">Project Description</div>
+            <textarea rows="3" placeholder="Tell us a bit about your project..."></textarea>
+          </div>
+          <div class="ef-group">
+            <div class="ef-label">Photos (Optional)</div>
+            <input type="file" multiple>
+          </div>
+          <label class="ef-check"><input type="checkbox"> I agree to receive SMS updates about my estimate.</label>
+          <label class="ef-check"><input type="checkbox" required> I consent to be contacted by call, text, or email about my project. *</label>
+        </div>
+        <button type="submit" class="btn btn-primary ef-submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="_assets/big-easy-fence-logo-footer.png" alt="Big Easy Fence logo" style="height:48px; width:auto;">
+        <p>Residential and commercial fencing solutions for New Orleans and surrounding Louisiana communities.</p>
+      </div>
+      <div class="foot-grid"><h4>Company</h4><a href="/services/residential/">Residential</a><a href="/services/commercial/">Commercial</a><a href="/fence-types/">Fence Types</a><a href="/fence-types/automatic-gates/">Gates</a></div>
+      <div class="foot-grid"><h4>More</h4><a href="/services/residential/fence-repair/">Fence Repair</a><a href="/gallery/">Projects</a><a href="/service-areas/">Service Areas</a><a href="#about">About</a></div>
+      <div class="foot-grid"><h4>Contact</h4><a href="/contact/">Contact</a><a href="/blog/">Blog</a><a href="tel:5043848207">504-384-8207</a><span style="display:block;padding:5px 0;">New Orleans, LA</span></div>
+    </div>
+    <div class="foot-bottom">
+      <span>Mon–Sun, 9:00 AM–6:00 PM · 625 Celeste St, Suite 504-A, New Orleans, LA 70130</span>
+      <span>© 2026 Big Easy Fence. All Rights Reserved. Concept mockup, not a live page.</span>
+    </div>
+  </div>
+</footer>
+</div>
+
+<div class="sticky-mobile-cta">
+  <a class="call" href="tel:5043848207">Call Now</a>
+  <a class="est" href="/contact/">Get a Free Estimate</a>
+</div>
+
+<button id="toTop" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<button id="chatBubble" type="button" aria-label="Chat with us" onclick="document.getElementById('estimateForm').scrollIntoView({behavior:'smooth', block:'center'})">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.68 1.4 5.07 3.6 6.68-.12.9-.5 2.3-1.4 3.7 1.7-.2 3.3-.9 4.5-1.8 1 .27 2.1.42 3.3.42 5.52 0 10-3.94 10-8.8S17.52 2 12 2z"/></svg>
+</button>
+
+<script>
+  setTimeout(()=>{ const n=document.getElementById('devnote'); if(n){ n.style.opacity='0'; setTimeout(()=>n.remove(),1000);} }, 10000);
+
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', ()=>{ header.classList.toggle('scrolled', window.scrollY > 12); });
+
+  const toTopBtn = document.getElementById('toTop');
+  window.addEventListener('scroll', ()=>{ toTopBtn.classList.toggle('show', window.scrollY > 500); });
+
+  document.querySelectorAll('img[onload]').forEach(img=>{ if(img.complete) img.classList.add('loaded'); });
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.gfilter').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.gfilter').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // intro photo cycler: crossfades through 4 real fence photos, dots stay in sync either way
+  (function(){
+    const cycler = document.getElementById('introCycler');
+    const dotsWrap = document.getElementById('introDots');
+    if(!cycler || !dotsWrap) return;
+    const imgs = [...cycler.querySelectorAll('.cyc-img')];
+    const dots = [...dotsWrap.querySelectorAll('span')];
+    let idx = 0;
+    function show(i){
+      imgs.forEach((img,n)=>img.classList.toggle('active', n===i));
+      dots.forEach((d,n)=>d.classList.toggle('active', n===i));
+      idx = i;
+    }
+    dots.forEach(d=>d.addEventListener('click', ()=>show(parseInt(d.dataset.i,10))));
+    if(!reduceMotion){
+      setInterval(()=>show((idx+1) % imgs.length), 4200);
+    }
+  })();
+
+  // fence type list: hover or click swings the featured card open, like a gate, to reveal the new material
+  (function(){
+    const featured = document.getElementById('fenceFeatured');
+    const face = document.getElementById('fenceFeaturedFace');
+    const list = document.getElementById('fenceList');
+    if(!featured || !face || !list) return;
+    const featuredImg = face.querySelector('img');
+    const featuredContent = featured.querySelector('.content');
+    const featuredTitle = featured.querySelector('h3');
+    const featuredDesc = featured.querySelector('p');
+    const items = [...list.querySelectorAll('.fence-list-item')];
+    let current = items.find(i=>i.classList.contains('active')) || items[0];
+    let busy = false, queued = null;
+    const SWING_MS = 420;
+
+    function paint(item){
+      const { img, title, desc, href } = item.dataset;
+      featuredImg.src = img;
+      featuredImg.alt = title;
+      featuredTitle.textContent = title;
+      featuredDesc.textContent = desc;
+      featured.setAttribute('href', href);
+    }
+
+    function runSwing(item){
+      busy = true;
+      items.forEach(i=>i.classList.remove('active'));
+      item.classList.add('active');
+      current = item;
+      featuredContent.classList.add('swap-out');
+      face.classList.add('swing-open');
+      setTimeout(()=>{
+        paint(item);
+        face.classList.add('no-transition', 'swing-closed-start');
+        face.classList.remove('swing-open');
+        void face.offsetWidth;
+        face.classList.remove('no-transition', 'swing-closed-start');
+        featuredContent.classList.remove('swap-out');
+        setTimeout(()=>{
+          busy = false;
+          if(queued && queued !== current){ const next = queued; queued = null; runSwing(next); }
+        }, SWING_MS);
+      }, SWING_MS);
+    }
+
+    function activate(item){
+      if(item === current && !busy) return;
+      if(reduceMotion){
+        items.forEach(i=>i.classList.remove('active'));
+        item.classList.add('active');
+        current = item;
+        paint(item);
+        return;
+      }
+      if(busy){ queued = item; return; }
+      runSwing(item);
+    }
+
+    items.forEach(item=>{
+      item.addEventListener('mouseenter', ()=>activate(item));
+      item.addEventListener('focus', ()=>activate(item));
+      item.addEventListener('click', ()=>activate(item));
+    });
+  })();
+
+  const counters = document.querySelectorAll('[data-count-to]');
+  const countIo = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      const el = entry.target; countIo.unobserve(el);
+      const target = parseFloat(el.getAttribute('data-count-to'));
+      const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      el.classList.add('in');
+      if(reduceMotion){ el.textContent = target.toFixed(decimals); return; }
+      const duration = 1100; const start = performance.now();
+      function tick(now){
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = (target * eased).toFixed(decimals);
+        if(p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold:0.6 });
+  counters.forEach(el=>countIo.observe(el));
+
+  if(!reduceMotion){
+    const heroPhoto = document.querySelector('.hero-photo');
+    if(heroPhoto){
+      window.addEventListener('scroll', ()=>{
+        const y = Math.min(window.scrollY, 600);
+        heroPhoto.style.transform = `translateY(${y * 0.12}px)`;
+      }, { passive:true });
+    }
+  }
+</script>
+</body>
+</html>
