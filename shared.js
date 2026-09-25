@@ -54,4 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  const galleryGrid = document.getElementById('galleryGrid');
+  if (galleryGrid) {
+    const items = [...galleryGrid.querySelectorAll('.gallery-item')];
+    const galleryFilters = document.querySelectorAll('.svc-filter');
+    galleryFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galleryFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          const show = filter === 'all' || item.dataset.category === filter;
+          item.classList.toggle('hide', !show);
+        });
+      });
+    });
+  }
 });

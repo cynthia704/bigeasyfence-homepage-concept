@@ -156,6 +156,20 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 .svc-filter{ padding:9px 18px; border-radius:30px; border:1px solid var(--line); font-size:13px; font-weight:500; background:var(--white); cursor:pointer; transition:background .2s ease, color .2s ease, border-color .2s ease; }
 .svc-filter.active, .svc-filter:hover{ background:var(--charcoal); color:#fff; border-color:var(--charcoal); }
 
+/* ===== PHOTO GALLERY (masonry-style filterable grid) ===== */
+.gallery-grid{ display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:190px; grid-auto-flow:dense; gap:16px; margin-top:32px; }
+.gallery-item{ position:relative; overflow:hidden; border-radius:14px; display:block; background:linear-gradient(135deg,#EDE4CE,#DCCFAE); }
+.gallery-item.tall{ grid-row:span 2; }
+.gallery-item.wide{ grid-column:span 2; }
+.gallery-item img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s ease, transform .4s ease; }
+.gallery-item img.loaded{ opacity:1; }
+.gallery-item:hover img{ transform:scale(1.06); }
+.gallery-item-label{ position:absolute; left:0; right:0; bottom:0; padding:16px; background:linear-gradient(transparent, rgba(20,18,14,0.75)); color:#fff; font-size:13.5px; font-weight:600; transform:translateY(6px); opacity:0; transition:opacity .25s ease, transform .25s ease; }
+.gallery-item:hover .gallery-item-label{ opacity:1; transform:translateY(0); }
+.gallery-item.hide{ display:none; }
+@media(max-width:900px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:170px; } }
+@media(max-width:520px){ .gallery-grid{ grid-template-columns:1fr; } .gallery-item.wide, .gallery-item.tall{ grid-column:span 1; grid-row:span 1; } }
+
 /* An interactive index-plus-preview layout: click a service name in the
    list, the panel on the right updates — closer to a restaurant menu or a
    product-selector than a grid of identical boxes. */
