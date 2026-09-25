@@ -108,4 +108,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     render();
   }
+
+  const styleTabs = document.getElementById('styleTabs');
+  if (styleTabs) {
+    const tabs = [...styleTabs.querySelectorAll('.style-tab')];
+    const panels = [...document.querySelectorAll('.style-panel')];
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const style = tab.dataset.style;
+        panels.forEach(p => p.classList.toggle('active', p.dataset.style === style));
+      });
+    });
+  }
 });

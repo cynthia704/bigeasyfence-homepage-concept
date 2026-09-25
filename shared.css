@@ -327,3 +327,46 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
 #chatBubble:hover{ background:#1d5adb; transform:translateY(-2px); }
 #chatBubble svg{ width:24px; height:24px; }
 @media(max-width:700px){ #toTop{ bottom:84px; } #chatBubble{ bottom:142px; } }
+
+/* ===== HERO KEN-BURNS (opt-in modifier, doesn't touch existing hero pages) ===== */
+@keyframes heroKenBurns{ 0%{ transform:scale(1); } 100%{ transform:scale(1.08); } }
+.hero-inner-photo.ken-burns img.loaded{ animation:heroKenBurns 20s ease-in-out infinite alternate; }
+
+/* ===== HERO TRUST PILLS (service detail pages) ===== */
+.hero-trust-pills{ display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 28px; }
+.hero-trust-pill{ display:inline-flex; align-items:center; gap:7px; padding:8px 14px; border-radius:30px;
+  background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.28); backdrop-filter:blur(2px);
+  font-size:12.5px; font-weight:600; color:#fff; }
+.hero-trust-pill svg{ width:13px; height:13px; flex-shrink:0; color:var(--brass); }
+
+/* ===== STYLE SWITCH (tabbed style/option showcase — service detail pages) ===== */
+.style-switch{ margin-top:40px; }
+.style-tabs{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
+.style-tab{ padding:12px 22px; border-radius:10px; border:1px solid var(--line); background:var(--white);
+  font-size:14px; font-weight:600; color:var(--charcoal); cursor:pointer; transition:all .2s ease; position:relative; }
+.style-tab:hover{ border-color:var(--brass); }
+.style-tab.active{ background:var(--charcoal); color:#fff; border-color:var(--charcoal); }
+.style-panel{ display:none; grid-template-columns:1.1fr 0.9fr; gap:0; border-radius:16px; overflow:hidden;
+  border:1px solid var(--line); background:var(--white); }
+.style-panel.active{ display:grid; animation:stylePanelIn .5s ease; }
+@keyframes stylePanelIn{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:translateY(0); } }
+.style-panel-photo{ min-height:340px; }
+.style-panel-body{ padding:38px 40px; display:flex; flex-direction:column; justify-content:center; }
+.style-panel-body .style-tag{ display:inline-flex; align-self:flex-start; padding:5px 12px; border-radius:20px;
+  background:var(--ivory-2); color:var(--brown); font-size:11.5px; font-weight:700;
+  letter-spacing:0.05em; text-transform:uppercase; margin-bottom:14px; }
+.style-panel-body h3{ font-size:26px; margin-bottom:12px; }
+.style-panel-body p{ font-size:15px; line-height:1.7; color:#4a453b; }
+@media(max-width:900px){ .style-panel.active{ grid-template-columns:1fr; } .style-panel-photo{ min-height:220px; } .style-panel-body{ padding:28px 26px; } }
+
+/* ===== WHY GRID (numbered reason cards — service detail pages) ===== */
+.why-grid{ margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.why-card{ position:relative; padding:34px 28px; border-radius:16px; background:var(--ivory); border:1px solid var(--line);
+  overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; }
+.why-card:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.1); }
+.why-card-num{ position:absolute; top:-6px; right:8px; font-family:'Playfair Display',serif; font-size:76px; font-weight:700;
+  color:rgba(29,29,27,0.06); line-height:1; pointer-events:none; transition:color .25s ease; }
+.why-card:hover .why-card-num{ color:rgba(176,138,82,0.16); }
+.why-card h4{ position:relative; font-size:18px; margin-bottom:10px; }
+.why-card p{ position:relative; font-size:14px; line-height:1.65; color:#4a453b; }
+@media(max-width:900px){ .why-grid{ grid-template-columns:1fr; } }
