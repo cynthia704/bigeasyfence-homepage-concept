@@ -71,4 +71,41 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  const blogGrid = document.getElementById('blogGrid');
+  if (blogGrid) {
+    const items = [...blogGrid.querySelectorAll('.blog-card')];
+    const blogFilters = document.querySelectorAll('.svc-filter');
+    const loadMoreBtn = document.getElementById('blogLoadMore');
+    const PAGE_SIZE = 12;
+    let currentFilter = 'all';
+    let visibleCount = PAGE_SIZE;
+
+    function render() {
+      const cats = (item) => item.dataset.category.split(' ');
+      const matches = items.filter(item => currentFilter === 'all' || cats(item).includes(currentFilter));
+      items.forEach(item => { item.style.display = 'none'; });
+      matches.forEach((item, i) => { item.style.display = i < visibleCount ? '' : 'none'; });
+      if (loadMoreBtn) loadMoreBtn.style.display = matches.length > visibleCount ? '' : 'none';
+    }
+
+    blogFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        blogFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        visibleCount = PAGE_SIZE;
+        render();
+      });
+    });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        visibleCount += PAGE_SIZE;
+        render();
+      });
+    }
+
+    render();
+  }
 });

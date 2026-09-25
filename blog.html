@@ -61,64 +61,698 @@
   <div class="wrap">
     <div class="svc-head">
       <div class="svc-head-text">
-        <div class="eyebrow" data-reveal>Recent Posts</div>
-        <h2 class="section-title" data-reveal>Latest From the Blog</h2>
-        <p class="section-lead" data-reveal>A few recent guides — the full archive lives on the main site.</p>
+        <div class="eyebrow" data-reveal>Full Archive</div>
+        <h2 class="section-title" data-reveal>Every Guide We've Published</h2>
+        <p class="section-lead" data-reveal>All 74 posts from the Big Easy Fence blog, filterable by topic. Each one opens the full article on bigeasyfence.com.</p>
       </div>
       <div class="svc-head-cta" data-reveal="rise">
-        <span class="num">3</span>
-        <span class="label">Recent Posts<small>More on bigeasyfence.com</small></span>
+        <span class="num">74</span>
+        <span class="label">Total Posts<small>Every article, all topics</small></span>
       </div>
     </div>
-    <div class="blog-cards-grid" data-reveal>
-      <a class="blog-card" href="https://www.bigeasyfence.com/best-practices-for-protecting-your-fence-against-weather-damage/" target="_blank" rel="noopener">
-        <div class="blog-card-photo photo"><img src="_assets/blog-weather-damage.jpg" alt="Sealing a wooden fence against weather damage" loading="lazy" onload="this.classList.add('loaded')"></div>
+    <div class="svc-filters" data-reveal style="display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;">
+      <button class="svc-filter active" data-filter="all">All Posts</button>
+      <button class="svc-filter" data-filter="type-of-fences">Type of Fences</button>
+      <button class="svc-filter" data-filter="wooden-fence">Wooden Fence</button>
+      <button class="svc-filter" data-filter="patio-cover">Patio Cover</button>
+      <button class="svc-filter" data-filter="fencing-materials">Fencing Materials</button>
+      <button class="svc-filter" data-filter="commercial-metal-fence">Commercial Metal Fence</button>
+      <button class="svc-filter" data-filter="aluminum-fence">Aluminum Fence</button>
+      <button class="svc-filter" data-filter="vinyl-fence">Vinyl Fence</button>
+      <button class="svc-filter" data-filter="automatic-gate">Automatic Gate</button>
+      <button class="svc-filter" data-filter="pressure-treated-wood">Pressure Treated Wood</button>
+    </div>
+    <div class="blog-cards-grid" id="blogGrid" data-reveal>
+      <a class="blog-card" data-category="fencing-materials type-of-fences" href="https://www.bigeasyfence.com/best-practices-for-protecting-your-fence-against-weather-damage/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/08/protecting-wooden-fence-with-sealant-scaled.jpg" alt="Best Practices for Protecting Your Fence Against Weather Damage" loading="lazy" onload="this.classList.add('loaded')"></div>
         <div class="blog-card-body">
           <div class="blog-card-date">Dec 10, 2024</div>
           <h3>Best Practices for Protecting Your Fence Against Weather Damage</h3>
-          <p>Protect your fence from weather damage with these top tips from Big Easy Fences. Keep your fence strong and durable all year round.</p>
+          <p>At Big Easy Fences, we understand that a fence is more than just a boundary—it’s a key part of your home’s curb appeal and security. However, it’s also exposed to various weather conditions year-round, which can cause significant damage if not properly maintained. In this post, we’ll walk you through some best practices to protect…</p>
           <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
         </div>
       </a>
-      <a class="blog-card" href="https://www.bigeasyfence.com/fence-ideas-for-mobile-homes/" target="_blank" rel="noopener">
-        <div class="blog-card-photo photo"><img src="_assets/blog-mobile-homes.jpg" alt="White fence idea for a mobile home" loading="lazy" onload="this.classList.add('loaded')"></div>
+      <a class="blog-card" data-category="fencing-materials type-of-fences" href="https://www.bigeasyfence.com/fence-ideas-for-mobile-homes/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/09/white-fence-scaled.jpg" alt="Fence Ideas for Mobile Homes" loading="lazy" onload="this.classList.add('loaded')"></div>
         <div class="blog-card-body">
           <div class="blog-card-date">Sep 20, 2024</div>
           <h3>Fence Ideas for Mobile Homes</h3>
-          <p>More than 20 million Americans with mobile homes are adding fences for a nicer look and privacy. Our guide offers great fencing tips.</p>
+          <p>More than 20 million Americans with mobile homes are adding fences for a nicer look and privacy. Our guide offers great fencing tips. Want a cool fence? Go with Big Easy Fence for top service and quality. Want to upgrade your outdoor space? Get in touch with us for your dream fence. We’re here to…</p>
           <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
         </div>
       </a>
-      <a class="blog-card" href="https://www.bigeasyfence.com/popular-house-and-fence-color-combinations/" target="_blank" rel="noopener">
-        <div class="blog-card-photo photo"><img src="_assets/blog-color-combos.jpg" alt="House and fence color combination example" loading="lazy" onload="this.classList.add('loaded')"></div>
+      <a class="blog-card" data-category="fencing-materials type-of-fences" href="https://www.bigeasyfence.com/popular-house-and-fence-color-combinations/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/09/best-fence-to-match-home-scaled.jpg" alt="Popular House and Fence Color Combinations" loading="lazy" onload="this.classList.add('loaded')"></div>
         <div class="blog-card-body">
           <div class="blog-card-date">Sep 20, 2024</div>
           <h3>Popular House and Fence Color Combinations</h3>
-          <p>Homeowners believe choosing the right colors for their home and fence makes it more attractive and valuable. The right combination is key.</p>
+          <p>Homeowners believe choosing the right colors for their home and fence makes it more attractive and valuable. Whether you prefer classic white or vibrant colors, the right combination is key. Big Easy Fence offers cool, safe fences to make your home look better. Our team can make your place stand out. Contact us for the…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="fencing-materials" href="https://www.bigeasyfence.com/how-to-build-a-good-neighbor-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/09/family-in-a-lawn-scaled.jpg" alt="How to Build a Good Neighbor Fence?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Sep 19, 2024</div>
+          <h3>How to Build a Good Neighbor Fence?</h3>
+          <p>Looking to build a stylish and peaceful fence? A good neighbor fence is what you need. We’ll show you how to make a privacy fence that also makes your area look better, choosing the best materials and following local rules. Big Easy Fence is here to assist! Our pros offer great advice and service to…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" href="https://www.bigeasyfence.com/top-fence-sealers-which-one-truly-protects-your-wood/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/08/wooden-plank-fence-scaled.jpg" alt="Top Fence Sealers: Which One Truly Protects Your Wood?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 14, 2024</div>
+          <h3>Top Fence Sealers: Which One Truly Protects Your Wood?</h3>
+          <p>There are so many sealers, a real crapshoot: water-based formulas versus oil-based solutions. All of them promise to breathe new life into wooden fences. Not all sealers are created the same. Some of them can protect the wood from one thing it needs protection from—moisture—while others will give protection against UV damage or mold and…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" href="https://www.bigeasyfence.com/how-to-seal-and-weatherproof-a-wooden-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/08/wooden-fence-close-up-scaled.jpg" alt="How to Seal and Weatherproof a Wooden Fence?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 14, 2024</div>
+          <h3>How to Seal and Weatherproof a Wooden Fence?</h3>
+          <p>It’s estimated that over 80% of wooden fences deteriorate prematurely due to a lack of wood sealing or weatherproofing. This leads to needless repair costs. Sealing and weatherproofing of your wooden fence are not only part of the maintenance but also an investment in durability and elegance for your property. In just very few steps…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" href="https://www.bigeasyfence.com/preserving-wood-fences-in-new-orleans-longevity-strategies-for-a-moist-environment/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/05/professional-painter-spraying-yard-fence-with-staining-scaled.jpg" alt="Preserving Wood Fences in New Orleans: Longevity Strategies for a Moist Environment" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 29, 2024</div>
+          <h3>Preserving Wood Fences in New Orleans: Longevity Strategies for a Moist Environment</h3>
+          <p>In humid climates, such as New Orleans, the longevity and aesthetics of wood fences can be significantly impacted without regular maintenance. The city’s moist environment presents unique challenges to these structures, making them susceptible to rapid deterioration if neglected. Regular care is not merely a recommendation but a necessity for preserving wood fences in this…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" href="https://www.bigeasyfence.com/storm-proofing-your-wooden-fence-hurricane-safety-tips-for-new-orleans-residents/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/05/wooden-stained-fence-made-out-of-lumber-scaled.jpg" alt="Storm-Proofing Your Wooden Fence: Hurricane Safety Tips for New Orleans Residents" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 22, 2024</div>
+          <h3>Storm-Proofing Your Wooden Fence: Hurricane Safety Tips for New Orleans Residents</h3>
+          <p>In the vibrant city of New Orleans, it’s not just the culture and music that make headlines; the region’s susceptibility to hurricanes is a constant reminder for its residents to stay prepared. With the increasing frequency of extreme weather events, protecting one’s home has become a priority. An integral part of many homes in New…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="automatic-gate" href="https://www.bigeasyfence.com/how-does-automatic-gates-work/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2024/05/a-modern-gate-with-a-wireless-card-sensor-scaled.jpg" alt="How Does Automatic Gates Work?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 15, 2024</div>
+          <h3>How Does Automatic Gates Work?</h3>
+          <p>Curious minds often wonder about the magic behind auto gates and how they manage to open and close automatically. Auto Gates have sensors that can identify approaching cars or people. The control system receives signals from these sensors and uses them to determine when to open or close the gate. The control system interprets data…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" href="https://www.bigeasyfence.com/a-wood-fence-type-for-every-home/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/Close-board-fencing-panels.jpg" alt="Making a Statement with Your Perimeter: A Wood Fence Type for Every Home" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 7, 2023</div>
+          <h3>Making a Statement with Your Perimeter: A Wood Fence Type for Every Home</h3>
+          <p>At Big Easy Fence, we understand that your home’s exterior is a canvas awaiting the perfect frame. A well-designed wood fence not only enhances the aesthetics of your property but also provides a crucial layer of security and privacy. Your choice of wood fence type can significantly impact the overall charm and character of your…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" href="https://www.bigeasyfence.com/sustainable-commercial-patio-covers/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/05/Depositphotos_75347411_s-2019.jpg" alt="Eco-Friendly Solutions: Sustainable Commercial Patio Covers for Environmentally Conscious Businesses" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>Eco-Friendly Solutions: Sustainable Commercial Patio Covers for Environmentally Conscious Businesses</h3>
+          <p>Eco-Friendly Solutions: Sustainable Commercial Patio Covers for Environmentally Conscious Businesses can be a challenging path to navigate. Indeed, when it’s time to make your business greener and more sustainable, the biggest hurdle is… Finding eco-friendly solutions like sustainable commercial patio covers. Many businesses have NO clue how to do this. However, this is what distinguishes…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" href="https://www.bigeasyfence.com/how-to-select-the-perfect-commercial-patio-cover/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/03/How-tall-should-a-patio-cover-be-Big-Easy-Fences-e1615966077776.jpg" alt="How to Select the Perfect Commercial Patio Cover for Your Business" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>How to Select the Perfect Commercial Patio Cover for Your Business</h3>
+          <p>How to Select the Perfect Commercial Patio Cover for Your Business can be a daunting task. So, where do you begin your search? I mean, there are so many materials and styles available… Not to mention finding the right contractor who won’t rip you off or do shoddy work. Fear not! We’ve got your back…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" style="display:none;" href="https://www.bigeasyfence.com/all-season-dining-experience-with-retractable-commercial-patio-covers/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/03/Residential-Patio-Covers.jpg" alt="Creating an All-Season Dining Experience with Retractable Commercial Patio Covers" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>Creating an All-Season Dining Experience with Retractable Commercial Patio Covers</h3>
+          <p>Creating an All-Season Dining Experience with Retractable Commercial Patio Covers is a game-changer for businesses in New Orleans. In fact, when it comes to enhancing the customer experience and boosting revenue, this is their #1 solution. But let’s face it – creating an all-season dining space isn’t as simple as throwing up some patio covers…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" style="display:none;" href="https://www.bigeasyfence.com/creative-ideas-for-commercial-patio-covers/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/03/Commercial-Outdoor-deck.jpg" alt="Designing an Inviting Outdoor Oasis: Creative Ideas for Commercial Patio Covers" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>Designing an Inviting Outdoor Oasis: Creative Ideas for Commercial Patio Covers</h3>
+          <p>Designing an Inviting Outdoor Oasis: Creative Ideas for Commercial Patio Covers can be a challenging yet rewarding endeavor. The truth is, many business owners struggle with transforming their outdoor spaces into inviting retreats. Taking on the task of designing your own commercial patio cover might seem daunting at first glance. In fact, without some creative…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" style="display:none;" href="https://www.bigeasyfence.com/why-commercial-patio-covers-are-worth-the-investment/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/02/Commercial-outdoor-deck-Big-Easy-Fences-e1620711250430.jpg" alt="Weather Protection and Durability: Why Commercial Patio Covers are Worth the Investment" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>Weather Protection and Durability: Why Commercial Patio Covers are Worth the Investment</h3>
+          <p>Weather Protection and Durability: Why Commercial Patio Covers are Worth the Investment is a topic that doesn’t get enough attention. You see, when it comes to enhancing outdoor spaces for businesses, many owners overlook this crucial element… The commercial patio cover. Sure, they might seem like just another addition but trust me – investing in…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="uncategorized" style="display:none;" href="https://www.bigeasyfence.com/transforming-your-commercial-space-with-stylish-patio-cover/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/03/Commercial-Outdoor-deck.jpg" alt="Transforming Your Commercial Space with Stylish Patio Covers" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>Transforming Your Commercial Space with Stylish Patio Covers</h3>
+          <p>Transforming Your Commercial Space with Stylish Patio Covers can feel like a daunting task. You might be wondering… Is it truly worth the expenditure? The answer, my friend, is a resounding yes. Transforming your commercial space with stylish patio covers not only enhances its aesthetic appeal but also provides functional benefits that could boost your…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" style="display:none;" href="https://www.bigeasyfence.com/maximizing-revenue-with-commercial-patio-covers/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/05/Patio-Cover-2.jpg" alt="Maximizing Revenue with Commercial Patio Covers: Tips for Restaurant Owners" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>Maximizing Revenue with Commercial Patio Covers: Tips for Restaurant Owners</h3>
+          <p>Maximizing Revenue with Commercial Patio Covers: Tips for Restaurant Owners is no walk in the park. In fact, when it’s time to upgrade and expand, their biggest hurdle is… Choosing the right commercial patio covers. This choice separates a simple eatery from a vibrant dining destination. But if you’re unsure about how to make this…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="uncategorized" style="display:none;" href="https://www.bigeasyfence.com/choosing-the-right-material-for-your-commercial-patio-cover/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/06/Commercial-patio-Big-Easy-Fences-e1620713466360.jpg" alt="Choosing the Right Material for Your Commercial Patio Cover: A Comparison Guide" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>Choosing the Right Material for Your Commercial Patio Cover: A Comparison Guide</h3>
+          <p>Choosing the Right Material for Your Commercial Patio Cover: A Comparison Guide is a crucial step in your business journey. In fact, when it’s time to upgrade or install new patio covers, most business owners’ #1 challenge is… Selecting the right material for their commercial patio cover. They are often overwhelmed by choices and lack…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" style="display:none;" href="https://www.bigeasyfence.com/how-commercial-patio-covers-enhance-outdoor-spaces/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/03/Residential-Patio-Covers.jpg" alt="How Commercial Patio Covers Enhance Outdoor Spaces and Attract Customers" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>How Commercial Patio Covers Enhance Outdoor Spaces and Attract Customers</h3>
+          <p>How Commercial Patio Covers Enhance Outdoor Spaces and Attract Customers is a concept often overlooked. Believe it or not, when businesses are looking to expand their customer base, this element rarely makes the list… Investing in commercial patio covers. This simple addition can transform your outdoor space into an inviting oasis that draws customers like…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="uncategorized" style="display:none;" href="https://www.bigeasyfence.com/the-benefits-of-installing-commercial-patio-covers/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/06/commercial-patio-covers-Big-Easy-Fences-e1620713449686.jpg" alt="The Benefits of Installing Commercial Patio Covers: A Comprehensive Guide" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 14, 2023</div>
+          <h3>The Benefits of Installing Commercial Patio Covers: A Comprehensive Guide</h3>
+          <p>The Benefits of Installing Commercial Patio Covers: A Comprehensive Guide is your ultimate roadmap. Indeed, when it comes to enhancing the aesthetic and functional value of your commercial property, patio covers are a game-changer. The Benefits of Installing Commercial Patio Covers: A Comprehensive Guide provides you with everything you need to know about this transformative…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="vinyl-fence" style="display:none;" href="https://www.bigeasyfence.com/going-green-how-vinyl-fences-can-reduce-your-carbon-footprint/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/05/vinyl-fence-repair.jpg" alt="Going Green: How Vinyl Fences Can Reduce Your Carbon Footprint" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 23, 2023</div>
+          <h3>Going Green: How Vinyl Fences Can Reduce Your Carbon Footprint</h3>
+          <p>Did you know that the type of fence you choose for your home can actually have an impact on the environment? Vinyl fences have become a popular choice for homeowners in recent years, but are they really a sustainable option? As more and more people become aware of the need to make eco-friendly choices, it’s…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="vinyl-fence" style="display:none;" href="https://www.bigeasyfence.com/vinyl-fence-styles-for-every-homeowner-classic-contemporary-and-everything-in-between/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/05/vinyl-fence-repair.jpg" alt="Vinyl Fence Styles for Every Homeowner: Classic, Contemporary, and Everything in Between" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 23, 2023</div>
+          <h3>Vinyl Fence Styles for Every Homeowner: Classic, Contemporary, and Everything in Between</h3>
+          <p>Are you in the market for a new fence for your property? With so many options available, it can be overwhelming to try to decide which one will not only meet your needs but also enhance the aesthetic appeal of your home. One popular choice that has been gaining traction in recent years is the…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="vinyl-fence" style="display:none;" href="https://www.bigeasyfence.com/vinyl-fences-the-advantages-and-disadvantages-you-need-to-know/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/10/Outdoor-Vinyl-Privacy-Fence-Big-Easy-Fences.jpg" alt="Vinyl Fences: The Advantages and Disadvantages You Need to Know" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 16, 2023</div>
+          <h3>Vinyl Fences: The Advantages and Disadvantages You Need to Know</h3>
+          <p>Are you considering investing in a vinyl fence for your property but not sure if it’s worth it? Or maybe you’re just starting to research fencing options and want to know more about vinyl fences. Choices for fencing options are numerous, and the longevity, durability, and maintenance needed will all depend on the materials used.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/understanding-the-differences-between-vinyl-and-metal-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/05/Depositphotos_12277191_s-2019.jpg" alt="Understanding the Differences Between Vinyl and Metal Fences" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 16, 2023</div>
+          <h3>Understanding the Differences Between Vinyl and Metal Fences</h3>
+          <p>When it comes to fencing for your home, there are endless options to choose from. However, there are two popular materials that homeowners are often torn between vinyl and metal. Which one should you choose? It depends on your individual needs and priorities. Fencing is an important element of any home’s exterior design. It not…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="fencing-materials" style="display:none;" href="https://www.bigeasyfence.com/garden-fencing-materials-in-new-orleans-which-one-is-right-for-me/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/Autumn-flowerses-near-wooden-fence.jpg" alt="Garden Fencing Materials in New Orleans: Which One is Right for Me?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 28, 2023</div>
+          <h3>Garden Fencing Materials in New Orleans: Which One is Right for Me?</h3>
+          <p>Are you a gardening enthusiast living in New Orleans seeking to protect your plants from unwanted visitors? Choosing the right fencing can be challenging, especially with the hot and humid climate of the city. Different types of fencing offer various benefits, but which one is the best for your garden? New Orleans has a charm…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="uncategorized" style="display:none;" href="https://www.bigeasyfence.com/why-you-should-invest-in-a-fence-during-the-off-season/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/12/PVC-fence.jpg" alt="Avoid the Crowds: Why You Should Invest in a Fence During the Off-Season" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 28, 2023</div>
+          <h3>Avoid the Crowds: Why You Should Invest in a Fence During the Off-Season</h3>
+          <p>Are you considering installing a fence on your property? Have you ever thought about buying it in the off-season? You might be able to enjoy several benefits by making this decision. Installing a fence is a considerable investment for any property owner. One of the most challenging aspects of this process is deciding when to…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/a-fence-that-complements-your-homes-style/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/04/Painting-Wood-by-Carpenter.jpg" alt="The Perfect Finishing Touch: A Fence That Complements Your Home’s Style" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 28, 2023</div>
+          <h3>The Perfect Finishing Touch: A Fence That Complements Your Home’s Style</h3>
+          <p>Have you ever driven by a home with a fence that looked completely out of place? It’s important to remember that your fence is not just a functional barrier, but also a part of your home’s overall appearance. Choosing a fence that complements your home’s architecture can add to its curb appeal and even increase…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="uncategorized" style="display:none;" href="https://www.bigeasyfence.com/the-best-fencing-materials-for-busy-new-orleans-homeowners/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/04/Painting-Wood-Fence.jpg" alt="The Best Fencing Materials for Busy New Orleans Homeowners: Quick and Easy Maintenance" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 28, 2023</div>
+          <h3>The Best Fencing Materials for Busy New Orleans Homeowners: Quick and Easy Maintenance</h3>
+          <p>Are you tired of spending your weekends repairing and maintaining your fence? With so many types of fences available, it’s hard to choose the one that will require the least amount of upkeep. Fences are an essential part of any property, providing security, privacy, and aesthetic appeal. However, maintaining them can be challenging, especially if…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/budget-friendly-sustainable-fencing-ideas-for-new-homeowners/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/05/wrought-iron-fence-white.jpg" alt="Budget-Friendly Sustainable Fencing Ideas for New Homeowners in New Orleans, LA" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 28, 2023</div>
+          <h3>Budget-Friendly Sustainable Fencing Ideas for New Homeowners in New Orleans, LA</h3>
+          <p>New homeowners often overlook the importance of the smooth functionality and aesthetic value of their fences; they simply install a traditional wooden fence and forget about it. However, with growing concerns about the environment, it’s more important than ever to consider sustainable fencing options. Fencing not only secures your property but also adds visual appeal…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/affordable-fencing-options-for-new-orleans-louisiana-residents/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/01/Cedar-wood-fence-Big-Eay-Fences.jpg" alt="The Affordable Fencing Options for New Orleans, Louisiana Residents" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 28, 2023</div>
+          <h3>The Affordable Fencing Options for New Orleans, Louisiana Residents</h3>
+          <p>Are you a homeowner in New Orleans looking to install a fence but worried about the cost? With so many types of fences available, it can be overwhelming to choose one that fits your budget. But which type of fence is the least expensive to put up in New Orleans without sacrificing quality? A fence…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/type-of-wood-fence-that-lasts-the-longest/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/The-fence-is-made-of-uncouth-logs.-palisade-are-rough-and-pointed-to-the-top.jpg" alt="Type of Wood Fence That Lasts the Longest" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 24, 2023</div>
+          <h3>Type of Wood Fence That Lasts the Longest</h3>
+          <p>Are you considering building a wood fence for your property but unsure about which type of wood to use? It’s an important decision, as the type of wood used can greatly affect the fence’s durability and lifespan. So, which type of wood fence lasts the longest? Wood fences are a popular choice for homeowners due…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/choosing-durable-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/Pointed-metal-fence.jpg" alt="Choosing Durable Fences for New Orleans Climate: A Guide by Big Easy Fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 22, 2023</div>
+          <h3>Choosing Durable Fences for New Orleans Climate: A Guide by Big Easy Fence</h3>
+          <p>When it comes to choosing a fence for your property, durability should be a top priority. New Orleans, with its hot and humid climate and occasional severe weather, requires a fence that can stand up to the elements. But with so many options available, it can be difficult to determine which type of fence will…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/choosing-a-long-lasting-fence-that-will-last-for-decades/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/Iron-fence.jpg" alt="Importance of Choosing a Long-lasting Fence That Will Last for Decades" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 21, 2023</div>
+          <h3>Importance of Choosing a Long-lasting Fence That Will Last for Decades</h3>
+          <p>When considering a fence for your property, durability, and longevity are the top priorities. In New Orleans, where the weather can be unpredictable and harsh, it’s important to invest in a fence that can withstand the elements. But with so many options available, which type of fence should you choose? In New Orleans, we deal…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/different-types-of-wood-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/White-wood-fence.jpg" alt="Exploring Different Types of Wood Fences in New Orleans" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 19, 2023</div>
+          <h3>Exploring Different Types of Wood Fences in New Orleans</h3>
+          <p>Explore different types of wood fences in New Orleans, from charming picket styles to durable materials, and find the perfect fence for your property.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/how-do-you-estimate-a-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/Smiling-male-builder-in-helmet-with-clipboard-1.jpg" alt="How Do You Estimate a Fence? New Orleans Guide &amp; Tips" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 19, 2023</div>
+          <h3>How Do You Estimate a Fence? New Orleans Guide &amp; Tips</h3>
+          <p>Discover how to estimate a fence in New Orleans with our comprehensive guide, covering factors affecting cost, types of fences, and professional tips.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/horizontal-vs-vertical-fence-which-is-cheaper-and-better/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/horizontal-fence.jpg" alt="Horizontal vs Vertical Fence: Which is Cheaper and Better for Your Property?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 14, 2023</div>
+          <h3>Horizontal vs Vertical Fence: Which is Cheaper and Better for Your Property?</h3>
+          <p>Adding a fence to your property can be a great investment if you are a homeowner. A fence not only adds privacy and security to your home, but it can also increase the overall value of your property. One question that comes up frequently when considering adding a fence is whether it is cheaper to…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/what-is-the-average-cost-of-a-fence-per-foot/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/Autumn-flowerses-near-wooden-fence.jpg" alt="What is the Average Cost of a Fence Per Foot? NOLA Insights" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 13, 2023</div>
+          <h3>What is the Average Cost of a Fence Per Foot? NOLA Insights</h3>
+          <p>Discover what is the average cost of a fence per foot in New Orleans, including factors affecting price and tips for saving money on your fencing project.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/how-much-does-a-wood-fence-cost-diy/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/04/Wooden-fence-panel.jpg" alt="How Much Does a Wood Fence Cost DIY? New Orleans Guide" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 13, 2023</div>
+          <h3>How Much Does a Wood Fence Cost DIY? New Orleans Guide</h3>
+          <p>Explore “How much does a wood fence cost DIY?” with our New Orleans guide, covering costs, benefits of DIY installation, and helpful tips.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="pressure-treated-wood" style="display:none;" href="https://www.bigeasyfence.com/does-pressure-treated-wood-last-longer-than-cedar/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/05/New-Orleans-Wood-Fences-1.jpg" alt="The Debate Over Longevity: Pressure Treated Wood vs. Cedar" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jan 30, 2023</div>
+          <h3>The Debate Over Longevity: Pressure Treated Wood vs. Cedar</h3>
+          <p>Find out if pressure treated wood is a better long-term investment than cedar. We compare the durability, maintenance, and longevity of both materials to answer the question: Does Pressure Treated Wood Last Longer Than Cedar?</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/is-pine-or-cedar-better-for-a-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/01/Cedar-wood-fence-Big-Eay-Fences.jpg" alt="Is Pine or Cedar Better for a Fence?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jan 10, 2023</div>
+          <h3>Is Pine or Cedar Better for a Fence?</h3>
+          <p>“Are you a New Orleans resident or business owner considering a fence? Learn the pros and cons of pine vs cedar to determine which is better for your fence project!”…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="pressure-treated-wood" style="display:none;" href="https://www.bigeasyfence.com/is-pressure-treated-wood-good-for-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2023/01/unpaintend-wooden-fence-Big-Easy-Fences.jpg" alt="Is Pressure Treated Wood Good for Fences?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jan 10, 2023</div>
+          <h3>Is Pressure Treated Wood Good for Fences?</h3>
+          <p>Find out if pressure treated wood is the right choice for your fence in New Orleans. Learn about the advantages, types, maintenance, regulations and lifespan of pressure treated wood fences.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/which-is-better-cedar-or-pressure-treated-wood/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/03/Wooden-Fence-1.jpg" alt="Which Is Better Cedar or Pressure Treated Wood?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Dec 20, 2022</div>
+          <h3>Which Is Better Cedar or Pressure Treated Wood?</h3>
+          <p>Cedar and pressure treated wood are two of the most popular materials used for fencing in New Orleans. Both offer a range of benefits, but there are some key differences between them that should be considered when making your decision. When it comes to fencing, many homeowners in New Orleans are faced with a difficult…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/what-is-the-cheapest-fence-to-install/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/12/Houses-with-fences-Big-Easy-Fences.jpg" alt="What Is the Cheapest Fence to Install?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Dec 16, 2022</div>
+          <h3>What Is the Cheapest Fence to Install?</h3>
+          <p>When it comes to installing a fence, budgeting is one of the most important considerations. Fences can be expensive, and depending on your needs, you may have to choose between quality and cost. But that doesn’t mean you have to sacrifice quality for affordability. There are plenty of options available when it comes to finding…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/find-out-what-are-the-best-woods-for-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/02/Wooden-Fences-1.jpg" alt="Find Out What Are the Best Woods for Fences" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Nov 22, 2022</div>
+          <h3>Find Out What Are the Best Woods for Fences</h3>
+          <p>You must choose the material after deciding whether to build a fence in your front or back yard. Although there are numerous fence materials available, many homeowners prefer the tried and true natural wood fence look to complement their home. If you decide to install a wood fence in your yard, you must choose the…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/new-design-ideas-for-vinyl-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/10/White-Vinyl-Fence-Big-Easy-Fences.jpg" alt="New Design Ideas for Vinyl Fences From the Experts in Fence Decorating" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Nov 18, 2022</div>
+          <h3>New Design Ideas for Vinyl Fences From the Experts in Fence Decorating</h3>
+          <p>Are you looking to spruce up your vinyl fence? At Big Easy Fence, we know a thing or two about decorating and designing outdoor spaces. We’ve put together some of our favorite ideas to help inspire you and make your yard look amazing. From classic options like adding some beautiful planters to more modern choices…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/importance-of-school-fencing/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/11/Fences-for-school.jpg" alt="What is the Importance of School Fencing?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Nov 16, 2022</div>
+          <h3>What is the Importance of School Fencing?</h3>
+          <p>Schools are important places for children to learn and grow. They should be safe havens where kids can feel secure and protected. Unfortunately, this isn’t always the case. There have been too many reports of violence, bullying, and even shootings taking place on school grounds. That’s why more and more schools are investing in fencing…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/the-strongest-type-of-privacy-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/08/Home-Fences-Big-Easy-Fences.jpg" alt="The Strongest Type of Fence for Privacy" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Nov 9, 2022</div>
+          <h3>The Strongest Type of Fence for Privacy</h3>
+          <p>Big Easy Fence is a dependable and experienced New Orleans fence contractor. We specialize in all types of fences, from privacy to ornamental, and can custom-build one to meet your exact specifications. When it comes to choosing a fence for your home, there are a lot of factors to consider. But one of the most…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/how-to-weedeat-around-vinyl-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/11/gas-trimmer-Big-Easy-Fences.jpg" alt="How to Weedeat Around Vinyl Fence?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Nov 8, 2022</div>
+          <h3>How to Weedeat Around Vinyl Fence?</h3>
+          <p>Weed eaters, also known as string trimmers, are one of the most versatile and useful lawn care tools you can own. Whether you have a small yard or a large one, there are times when a weed eater can come in handy. Weed eaters are great for trimming grass around fences, flower beds, and other…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/how-to-choose-fences-for-yard/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/08/Home-Fences-Big-Easy-Fences.jpg" alt="How to Choose the Right Type of Fence for Your Home" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 15, 2022</div>
+          <h3>How to Choose the Right Type of Fence for Your Home</h3>
+          <p>Fences can be good for keeping people in or keeping prying eyes out. But, most importantly, fences should complement the style of your home and yard. Here are some factors to consider when deciding which fence is best for you: Your home’s style If you have a traditional home, you may want a white picket…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/best-dog-fences-for-every-breed-and-homeowner/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/11/Dog-on-the-garden.jpg" alt="10 Best Dog Fences for Every Breed and Homeowner Need" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 5, 2022</div>
+          <h3>10 Best Dog Fences for Every Breed and Homeowner Need</h3>
+          <p>Keeping your dog safe so they don’t wander off will require suitable fencing. You should know how to choose the best fence for dogs that will help you achieve your goal to protect your dog while providing an extra stimulating environment. There are several types of outdoor fences for dogs that you can choose from.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/effective-ways-to-save-money-when-buying-a-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/09/Fence-Big-Easy-Fences-e1599707944850.jpg" alt="How to Save Money on a Fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 13, 2022</div>
+          <h3>How to Save Money on a Fence</h3>
+          <p>Planning and budgeting alone for a fence can take time and can be intimidating. Factors such as fencing materials, design style, and square foot can also be taken into consideration. In need of a fence? Our guys at Big Easy Fence can help you out. We offer fences ranging from wood to metal for every…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/choosing-best-wood-stain-for-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/04/Painting-Wood-Fence.jpg" alt="How to Choose the Best Wood Stain for Fences" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Apr 4, 2022</div>
+          <h3>How to Choose the Best Wood Stain for Fences</h3>
+          <p>As time goes on and your fence starts to age, the paint finish starts to wear off. There are a lot of ways you can refurbish a fence without spending too much money or hiring someone. With simple staining or painting, you can restore that wood to its natural look. If you’ve looked at the…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/how-to-clean-fence-without-pressure-washer/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2022/03/Pressure-Cleaning-Big-Easy-Fences.jpg" alt="How to Clean Wood Fence without a Pressure Washer" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Mar 4, 2022</div>
+          <h3>How to Clean Wood Fence without a Pressure Washer</h3>
+          <p>Pressure washers are pretty handy – at least for getting your fence nice and clean. But there are a ton of other ways to go about it too, such as power washing or using a sponge. Fences are subject to many of the same problems as other outdoor surfaces. They can be dirty from dust,…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/signs-for-fence-repair/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/06/Fence-Repair.jpg" alt="5 Signs that It’s Time for a Fence Repair" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jan 11, 2022</div>
+          <h3>5 Signs that It’s Time for a Fence Repair</h3>
+          <p>Good fences make good neighbors is something that we would often hear when talking about fences. But something we should really talk more about is how good fences also make great investment. When your property has an aesthetically pleasing fence curb, it significantly adds to your home’s overall value. But it does the opposite when…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="aluminum-fence commercial-metal-fence type-of-fences wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/ways-to-strengthen-a-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/08/What-are-the-Best-Ways-to-Strengthen-A-Fence.jpg" alt="What are the Best Ways to Strengthen A Fence?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 12, 2021</div>
+          <h3>What are the Best Ways to Strengthen A Fence?</h3>
+          <p>Whether it’s from rotting due to passage of time or damages caused by environmental factors like erosion, wind or heavy rains, fences naturally weaken, lean and deteriorate eventually if left unchecked. No matter how perfect and beautiful it looked when you first put up your fence, time can take its toll on it. That’s why…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/how-much-do-wood-fences-cost-in-2021/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/07/Wood-Fences-Cost-in-2021.jpg" alt="How Much Do Wood Fences Cost in 2021?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 26, 2021</div>
+          <h3>How Much Do Wood Fences Cost in 2021?</h3>
+          <p>There is nothing more iconic in an American household than to have a fence. A white picket fence has become of the symbols that people see together with the idea of the American Dream. However, many people who live in rural or suburban areas rarely have a fence to surround their property. If this is…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="aluminum-fence commercial-metal-fence type-of-fences wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/3-fun-ways-to-choose-from-for-a-successful-chain-link-fence-upgrade/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/06/Chain-Link-Fence-Upgrade.jpg" alt="3 Fun Ways to Choose From for a Successful Chain-Link Fence Upgrade" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jun 7, 2021</div>
+          <h3>3 Fun Ways to Choose From for a Successful Chain-Link Fence Upgrade</h3>
+          <p>A chain-link fence is one of the most popular types of fences available for homes and industrial complexes. Sometimes called wire netting, this fence is significantly cheaper and easier to install compared to other fence installations such as wood and vinyl. But despite its cheap price, chain-link fences are not immune to criticism. Some homeowners…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/6-reasons-why-wood-fence-installation-may-be-right-for-your-home/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/05/Wood-Fence-Installation-Bigeasyfences.com_.jpg" alt="6 Reasons Why Wood Fence Installation May Be Right for Your Home" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 25, 2021</div>
+          <h3>6 Reasons Why Wood Fence Installation May Be Right for Your Home</h3>
+          <p>The first thing that anyone can notice in every house property is its fence. This upright barrier or railing surrounding and enclosing your property is what gives the first impression to any visitor you will invite and even to any person just passing by. So with this premise alone, you as a homeowner would want…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/how-do-you-pick-the-best-vinyl-fence-color/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/10/How-do-you-pick-a-vinyl-fence-color-bigeasyfence.com_.jpg" alt="How Do You Pick the Best Vinyl Fence Color?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 18, 2021</div>
+          <h3>How Do You Pick the Best Vinyl Fence Color?</h3>
+          <p>Of all the fence installation materials being offered by contractors, the vinyl fence is considered to be the new kid in the block. But this didn’t stop homeowners from driving up the demand for the said material, making it one of the top choices for fence installation across the States. If you happen to pick…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/why-is-wrought-iron-so-expensive/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/05/Wrought-Iron-Fence-BigEasyFences.com_.jpg" alt="Why Is Wrought Iron So Expensive?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">May 13, 2021</div>
+          <h3>Why Is Wrought Iron So Expensive?</h3>
+          <p>Wrought iron continues to be a great material for fences and gates in many New Orleans yards. It is a popular attractive and durable fence type and can be used for both residential and commercial applications. Wrought iron fence has so many great points, like security, strength, and beauty. It is also proven to last…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="patio-cover" style="display:none;" href="https://www.bigeasyfence.com/how-high-should-a-patio-cover-be/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/03/How-high-should-a-patio-cover-be-Big-Easy-Fences.jpg" alt="How High Should Your Patio Cover Be? Tips From the Pros" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Mar 17, 2021</div>
+          <h3>How High Should Your Patio Cover Be? Tips From the Pros</h3>
+          <p>Having a patio is not enough for an outdoor area. You would need to add a patio cover to bring your outdoor living experience in a full circle. A patio cover makes your outdoor area more inviting. There is a lot to consider about building a patio cover. How high should a patio cover be?</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="aluminum-fence commercial-metal-fence wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/is-fencing-a-good-business/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/02/Residential-Wooden-Fences-e1644493496594.jpg" alt="Is Fencing a Good Business in Today’s World?" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Feb 3, 2021</div>
+          <h3>Is Fencing a Good Business in Today’s World?</h3>
+          <p>The fencing business is but one of the subsections of the construction industry. If you love working outside and putting your construction know-how to use to create functional and beautiful fences, you might have what it takes to start a fencing business. According to IBIS (Interactive Biodiversity Information System) world, the fencing industry brings in…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/how-to-prevent-rot-in-wooden-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2021/01/Old-Wooden-fence-e1611209313380.jpg" alt="How to Prevent Rot in Wooden Fences" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jan 21, 2021</div>
+          <h3>How to Prevent Rot in Wooden Fences</h3>
+          <p>No one can deny the beauty and appeal that wood fencing has. They continue to be the classic and timeless choice for setting boundaries and are also best for keeping unwanted visitors from coming into your property. Many factors can pose a threat to even the most excellent wood fence. These can lead to damages…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/purchasing-a-quality-wood-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/11/White-wood-fence-Big-Easy-Fences-1.jpg" alt="Make The Best Decision: Purchasing a Quality Wood Fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Nov 26, 2020</div>
+          <h3>Make The Best Decision: Purchasing a Quality Wood Fence</h3>
+          <p>Purchasing a quality wood fence is the most crucial part you will need to decide on. Wood has always been the most popular choice for durable fencing all across the country. Wood is a classic and timeless choice and looks great no matter what house design you already have. There are a lot of types…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="commercial-metal-fence" style="display:none;" href="https://www.bigeasyfence.com/choose-the-best-fence-for-you-metal-fence-vs-wrought-iron-fence/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/10/Wrought-Iron-Gate-Big-Easy-Fences.jpg" alt="Choose The Best Fence For You: Metal Fence vs. Wrought Iron Fence" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Oct 13, 2020</div>
+          <h3>Choose The Best Fence For You: Metal Fence vs. Wrought Iron Fence</h3>
+          <p>Choosing proper fencing for your home or property can be a lot more work than you can expect. Fencing has a lot of uses. Some reasons for getting a fence can include security, aesthetics, or privacy. Don’t forget to add the protection against outside forces and the increase in property value it brings. With the…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/extend-the-life-of-your-wood-fence-in-new-orleans/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/10/Hanging-Flower-Pots-with-fence-Bigeasyfences-1.jpg" alt="Tips to Extend the Life of Your Wood Fence in New Orleans" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Oct 9, 2020</div>
+          <h3>Tips to Extend the Life of Your Wood Fence in New Orleans</h3>
+          <p>Wood is a favorite material for a fence because of its traditional and natural beauty, versatility, and economy. Aside from adding value to your property, a wooden fence provides privacy and security so long as it is maintained properly. The only downside for wooden fences is that they require the most maintenance because the material…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="automatic-gate" style="display:none;" href="https://www.bigeasyfence.com/heres-an-easy-guide-to-automatic-gate-openers/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/10/Automatic-gate-openers-e1601613362840.jpg" alt="Here’s an Easy Guide To Automatic Gate Openers" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Oct 2, 2020</div>
+          <h3>Here’s an Easy Guide To Automatic Gate Openers</h3>
+          <p>If you already have a gate or are still planning to install one for your home, there is a question you can start asking. How can you make opening and closing your gate easier and more convenient? How do you save time and effort lost from opening and closing the gate yourself? The answer is…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/7-best-fence-types-for-your-home/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/09/Picket-Fence-Big-Easy-Fences.jpg" alt="7 Best Fence Types for Your Home" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Sep 24, 2020</div>
+          <h3>7 Best Fence Types for Your Home</h3>
+          <p>The overwhelming number of choices for fence materials and fencing styles can make it very difficult to decide on the best fence type for your home. What are some factors you should consider? How will you be assured that the fence you choose to install for your home will last for years down the road?</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/5-privacy-fences-you-can-get-at-an-affordable-price/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/09/Privacy-Fence-Panel-Big-Easy-Fences-1.jpg" alt="5 Privacy Fences You Can Get At An Affordable Price" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Sep 18, 2020</div>
+          <h3>5 Privacy Fences You Can Get At An Affordable Price</h3>
+          <p>For many households, privacy is of utmost importance. Done right, a privacy fence will not only improve your privacy but also enhance your security and curb appeal. There is also a potential for the fence to increase the value of your property. Crucially, you can get all these benefits without having to break the bank.</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/different-durable-fences-available/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/08/Gold-Color-Fence-Big-Easy-Fences.jpg" alt="What are Different Durable Fences Available" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 26, 2020</div>
+          <h3>What are Different Durable Fences Available</h3>
+          <p>Not all fences are the same. The used for durable fences could be the same across many homeowners for safety and aesthetic purposes but there are various different types of fences to choose from. For different fences, you should also consider various elements such as installation costs, type of material and level of maintenance. The…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="aluminum-fence type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/five-incredible-ways-to-clean-aluminum-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/08/Clean-Aluminum-Fences.jpg" alt="Five Incredible Ways to Clean Aluminum Fences" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 20, 2020</div>
+          <h3>Five Incredible Ways to Clean Aluminum Fences</h3>
+          <p>Aluminum remains the top choice for the material and style of fence trending the most these days.  Although each fencing material has its advantages and disadvantages, the popularity of aluminum fencing comes from its qualities that render more pros than cons.  One of its most significant advantages over other fence materials is that it’s easy…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="commercial-metal-fence type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/how-to-take-care-of-your-fence-for-summer/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/08/Fence-for-Summer.jpg" alt="How to Take Care of Your Fence for Summer" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 13, 2020</div>
+          <h3>How to Take Care of Your Fence for Summer</h3>
+          <p>Summer can be a favorite season of the year because it’s the time you can enjoy the outdoors on your porches and sprawl on the lawn.   This season brings in the sunshine and moisture that’s been craved for during winter.   It also makes you take precautions to prevent any damages that can be caused by…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="type-of-fences" style="display:none;" href="https://www.bigeasyfence.com/7-outstanding-features-of-chain-link-fences/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/08/Leaves-on-Frozen-Fence.jpg" alt="7 Outstanding Features of Chain Link Fences" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Aug 7, 2020</div>
+          <h3>7 Outstanding Features of Chain Link Fences</h3>
+          <p>A fence is one of the most important features of a property that enhances its overall aesthetic appeal.   There are a handful of materials that you can choose from in building your fence that will mainly provide the protection you need for your home. One of the oldest and most popular fencing materials being used…</p>
+          <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </div>
+      </a>
+      <a class="blog-card" data-category="wooden-fence" style="display:none;" href="https://www.bigeasyfence.com/protect-your-wooden-fence-easy-tips-against-rotting/" target="_blank" rel="noopener">
+        <div class="blog-card-photo photo"><img src="https://www.bigeasyfence.com/wp-content/uploads/2020/07/rotting-wooden-fence-1.jpg" alt="Protect Your Wooden Fence: Easy Tips Against Rotting" loading="lazy" onload="this.classList.add('loaded')"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Jul 7, 2020</div>
+          <h3>Protect Your Wooden Fence: Easy Tips Against Rotting</h3>
+          <p>Adding fences to your home is a valuable investment for any homeowner. It sets a clear boundary for your property and serves as security and protection. The design and finish increase the aesthetic of your house and property value as well. The most popular kind installed in homes is wooden fences. Wooden fences are affordable…</p>
           <span class="blog-card-more">Read the Full Guide <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
         </div>
       </a>
     </div>
-  </div>
-</section>
-
-<section style="background:var(--ivory-2);">
-  <div class="wrap">
-    <div class="eyebrow" data-reveal>Browse Topics</div>
-    <h2 class="section-title" data-reveal>Categories</h2>
-    <p class="section-lead" data-reveal>Topics covered across the full blog archive on bigeasyfence.com.</p>
-    <div class="tag-list" data-reveal>
-      <span class="tag-pill">Aluminum Fence</span>
-      <span class="tag-pill">Automatic Gate</span>
-      <span class="tag-pill">Commercial Metal Fence</span>
-      <span class="tag-pill">Fencing Materials</span>
-      <span class="tag-pill">Patio Cover</span>
-      <span class="tag-pill">Pressure Treated Wood</span>
-      <span class="tag-pill">Type of Fences</span>
-      <span class="tag-pill">Vinyl Fence</span>
-      <span class="tag-pill">Wooden Fence</span>
+    <div style="text-align:center; margin-top:36px;">
+      <button id="blogLoadMore" type="button" class="btn btn-secondary">Load More Posts</button>
     </div>
-    <a class="btn btn-secondary" href="https://www.bigeasyfence.com/blog/" target="_blank" rel="noopener" style="margin-top:28px;" data-reveal>Browse the Full Archive</a>
   </div>
 </section>
 
