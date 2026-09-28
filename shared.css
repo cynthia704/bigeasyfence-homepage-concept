@@ -391,3 +391,16 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
 .faq-accordion details[open] summary{ border-bottom:1px solid var(--line); }
 .faq-accordion .faq-a-body a{ color:var(--brown); font-weight:600; border-bottom:1px solid var(--brass); }
 .faq-accordion .faq-a-body a:hover{ color:var(--brass); }
+
+/* ===== CENTERED HERO (residential service pages: wide, centered, one-line headline + pills) ===== */
+.hero-center .hero-inner-content{ max-width:1100px; margin-left:auto; margin-right:auto; text-align:center; }
+.hero-center .hero-inner-photo::after{ background:linear-gradient(180deg, rgba(15,14,12,0.62) 0%, rgba(15,14,12,0.72) 100%); }
+.hero-center .eyebrow::after{ content:""; width:24px; height:1.5px; background:var(--brass); display:inline-block; }
+.hero-center h1.page-title{ max-width:none; margin-left:auto; margin-right:auto; }
+.hero-center p.section-lead{ max-width:820px; margin-left:auto; margin-right:auto; font-size:18px; }
+.hero-center .hero-trust-pills{ justify-content:center; }
+.hero-center .cta-pair{ justify-content:center; }
+@media(min-width:1000px){
+  .hero-center h1.page-title{ white-space:nowrap; font-size:clamp(34px,3.5vw,46px); }
+  .hero-center .hero-trust-pills{ flex-wrap:nowrap; }
+}
