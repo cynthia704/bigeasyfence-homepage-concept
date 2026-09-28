@@ -406,3 +406,4 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
   .hero-center .hero-trust-pills{ flex-wrap:nowrap; }
 }
 .hero-center h1 .h1-line{ display:block; }
+.hero-center p.section-lead{ text-wrap:balance; }
