@@ -1,5 +1,5 @@
 /* ============================================================
-   Big Easy Fence — shared inner-page stylesheet
+   Big Easy Fence, shared inner-page stylesheet
    Design system pulled from 03-homepage-redesign/concept-G-editorial-variety.html
    Reused by every inner page (residential, commercial, etc.) so they stay
    visually consistent with the approved homepage concept and with each other.
@@ -136,7 +136,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 .final-cta p{ color:#e6dfcc; margin-bottom:8px; }
 @media(max-width:700px){ .final-cta h2{ font-size:30px; } }
 
-/* ===== SERVICE GRID (new — for inner pages) ===== */
+/* ===== SERVICE GRID (new, for inner pages) ===== */
 /* A picket-fence motif: a decorative top rail above the grid, numbered
    "post cap" badges on each card, cards set at alternating heights like
    picket tops, and a gate-swing tilt on hover instead of a flat lift. */
@@ -188,7 +188,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 @media(max-width:520px){ .gallery-grid{ grid-template-columns:1fr; } .gallery-item.wide, .gallery-item.tall{ grid-column:span 1; grid-row:span 1; } }
 
 /* An interactive index-plus-preview layout: click a service name in the
-   list, the panel on the right updates — closer to a restaurant menu or a
+   list, the panel on the right updates, closer to a restaurant menu or a
    product-selector than a grid of identical boxes. */
 .svc-showcase{ margin-top:36px; display:grid; grid-template-columns:340px 1fr; gap:44px; align-items:start; }
 .svc-list{ display:flex; flex-direction:column; border-top:1px solid var(--line); }
@@ -215,7 +215,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 @media(max-width:900px){ .svc-showcase{ grid-template-columns:1fr; } .svc-preview{ position:static; } .svc-preview-photo{ height:240px; } }
 @media(max-width:700px){ .svc-preview-body{ grid-template-columns:1fr; } .svc-preview-badges{ flex-direction:row; flex-wrap:wrap; border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:18px; } .svc-preview-badges div{ flex:1; min-width:140px; } }
 
-/* ===== GOAL BENTO (photo-backed, one big + three small tiles — not a plain icon grid) ===== */
+/* ===== GOAL BENTO (photo-backed, one big + three small tiles, not a plain icon grid) ===== */
 .goal-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:36px; flex-wrap:wrap; }
 .goal-head-text{ flex:1; min-width:280px; }
 .goal-bento{ margin-top:44px; display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,220px); gap:18px; }
@@ -241,7 +241,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 @media(max-width:900px){ .goal-bento{ grid-template-columns:1fr 1fr; grid-template-rows:180px 180px 160px 160px; } .goal-tile-lg{ grid-column:span 2; grid-row:span 1; } .goal-tile-wide{ grid-column:span 2; } }
 @media(max-width:560px){ .goal-bento{ grid-template-columns:1fr; grid-template-rows:220px repeat(3,180px); } .goal-tile-lg, .goal-tile-wide{ grid-column:span 1; } }
 
-/* ===== PAIRING ZIGZAG (alternating photo/text rows — not a flat 3-card grid) ===== */
+/* ===== PAIRING ZIGZAG (alternating photo/text rows, not a flat 3-card grid) ===== */
 .pair-zigzag{ margin-top:48px; display:flex; flex-direction:column; gap:40px; }
 .pair-row{ display:grid; grid-template-columns:1.1fr 1fr; gap:44px; align-items:center; }
 .pair-row.reverse{ grid-template-columns:1fr 1.1fr; }
@@ -253,7 +253,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 .pair-row-body p{ font-size:14.5px; color:#4a453b; margin-top:10px; max-width:380px; }
 @media(max-width:800px){ .pair-row, .pair-row.reverse{ grid-template-columns:1fr; gap:20px; } .pair-row.reverse .pair-row-photo{ order:0; } .pair-row-photo{ height:220px; } }
 
-/* ===== CHECK SPLIT (photo + vertical timeline — not a 4-across icon grid) ===== */
+/* ===== CHECK SPLIT (photo + vertical timeline, not a 4-across icon grid) ===== */
 .check-split{ margin-top:44px; display:grid; grid-template-columns:0.9fr 1.1fr; gap:52px; align-items:center; }
 .check-photo{ height:420px; border-radius:16px; }
 .check-timeline{ position:relative; display:flex; flex-direction:column; gap:30px; padding-left:30px; }
@@ -264,7 +264,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 .check-t-item p{ font-size:13.5px; color:#4a453b; }
 @media(max-width:900px){ .check-split{ grid-template-columns:1fr; gap:30px; } .check-photo{ height:260px; } }
 
-/* ===== FAQ CAROUSEL (horizontal scroll strip — not a static 4-card grid) ===== */
+/* ===== FAQ CAROUSEL (horizontal scroll strip, not a static 4-card grid) ===== */
 .insta-arrow{ flex-shrink:0; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--white);
   display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--charcoal); transition:background .2s ease, color .2s ease; }
 .insta-arrow:hover{ background:var(--charcoal); color:#fff; }
@@ -291,7 +291,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:18
 .review-strip a{ font-size:13px; font-weight:600; color:var(--charcoal); border-bottom:1.5px solid var(--brass); padding-bottom:1px; }
 .review-strip a:hover{ color:var(--brass); }
 
-/* ===== COMPACT CTA BAND (small — for inner pages that don't need the full homepage closer) ===== */
+/* ===== COMPACT CTA BAND (small, for inner pages that don't need the full homepage closer) ===== */
 .mini-cta{ background:var(--charcoal); color:#fff; padding:54px 0; text-align:center; }
 .mini-cta h3{ color:#fff; font-size:26px; }
 .mini-cta p{ color:#c9c2ae; margin-top:8px; font-size:14.5px; }
@@ -339,7 +339,7 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
   font-size:12.5px; font-weight:600; color:#fff; }
 .hero-trust-pill svg{ width:13px; height:13px; flex-shrink:0; color:var(--brass); }
 
-/* ===== STYLE SWITCH (tabbed style/option showcase — service detail pages) ===== */
+/* ===== STYLE SWITCH (tabbed style/option showcase, service detail pages) ===== */
 .style-switch{ margin-top:40px; }
 .style-tabs{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
 .style-tab{ padding:12px 22px; border-radius:10px; border:1px solid var(--line); background:var(--white);
@@ -359,7 +359,7 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
 .style-panel-body p{ font-size:15px; line-height:1.7; color:#4a453b; }
 @media(max-width:900px){ .style-panel.active{ grid-template-columns:1fr; } .style-panel-photo{ min-height:220px; } .style-panel-body{ padding:28px 26px; } }
 
-/* ===== WHY GRID (numbered reason cards — service detail pages) ===== */
+/* ===== WHY GRID (numbered reason cards, service detail pages) ===== */
 .why-grid{ margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
 .why-card{ position:relative; padding:34px 28px; border-radius:16px; background:var(--ivory); border:1px solid var(--line);
   overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; }
@@ -371,7 +371,7 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
 .why-card p{ position:relative; font-size:14px; line-height:1.65; color:#4a453b; }
 @media(max-width:900px){ .why-grid{ grid-template-columns:1fr; } }
 
-/* ===== COST STATS (real pricing callouts — pages with genuine cost data) ===== */
+/* ===== COST STATS (real pricing callouts, pages with genuine cost data) ===== */
 .cost-stats{ margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
 .cost-stat-card{ padding:32px 26px; border-radius:16px; background:var(--charcoal); color:#fff; text-align:center; }
 .cost-stat-card .amount{ font-family:'Playfair Display',serif; font-size:32px; color:var(--brass); display:block; margin-bottom:8px; }
@@ -379,7 +379,7 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
 .cost-stat-card .note{ font-size:12.5px; color:rgba(255,255,255,0.6); line-height:1.5; }
 @media(max-width:900px){ .cost-stats{ grid-template-columns:1fr; } }
 
-/* ===== FAQ ACCORDION (native details/summary — pages with genuine real Q&A) ===== */
+/* ===== FAQ ACCORDION (native details/summary, pages with genuine real Q&A) ===== */
 .faq-accordion{ margin-top:36px; display:flex; flex-direction:column; gap:12px; }
 .faq-accordion details{ border:1px solid var(--line); border-radius:12px; padding:0; background:var(--white); overflow:hidden; }
 .faq-accordion summary{ padding:20px 24px; font-weight:600; font-size:15.5px; cursor:pointer; list-style:none; display:flex;

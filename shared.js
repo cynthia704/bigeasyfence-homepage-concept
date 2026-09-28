@@ -1,4 +1,4 @@
-// Big Easy Fence — shared inner-page behavior (header shadow, reveal-on-scroll, back-to-top)
+// Big Easy Fence, shared inner-page behavior (header shadow, reveal-on-scroll, back-to-top)
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('siteHeader');
   if (header) {
