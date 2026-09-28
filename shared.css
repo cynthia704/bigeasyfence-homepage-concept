@@ -389,3 +389,5 @@ footer{ background:#141310; color:#a89f8f; padding:64px 0 28px; font-size:13.5px
 .faq-accordion details[open] summary::after{ transform:rotate(45deg); }
 .faq-accordion .faq-a-body{ padding:0 24px 20px; font-size:14.5px; line-height:1.7; color:#4a453b; }
 .faq-accordion details[open] summary{ border-bottom:1px solid var(--line); }
+.faq-accordion .faq-a-body a{ color:var(--brown); font-weight:600; border-bottom:1px solid var(--brass); }
+.faq-accordion .faq-a-body a:hover{ color:var(--brass); }
