@@ -122,4 +122,31 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Keep headings on one line: shrink the font (down to a floor) before letting a heading wrap.
+  function fitHeadings() {
+    document.querySelectorAll('h2.section-title, .mini-cta h3').forEach(el => {
+      el.style.fontSize = ''; el.style.whiteSpace = 'nowrap';
+      const base = parseFloat(getComputedStyle(el).fontSize), min = Math.max(20, base * 0.62);
+      let s = base;
+      while (el.scrollWidth > el.clientWidth + 1 && s > min) { s -= 1; el.style.fontSize = s + 'px'; }
+      if (el.scrollWidth > el.clientWidth + 1) { el.style.whiteSpace = ''; el.style.fontSize = ''; }
+    });
+    document.querySelectorAll('.hero-center h1').forEach(h => {
+      const lines = h.querySelectorAll('.h1-line');
+      const parts = lines.length ? [...lines] : [h];
+      h.style.fontSize = '';
+      parts.forEach(p => { p.style.whiteSpace = 'nowrap'; });
+      const base = parseFloat(getComputedStyle(h).fontSize), min = Math.max(20, base * 0.62);
+      const over = () => parts.some(p => p.scrollWidth > p.clientWidth + 1);
+      let s = base;
+      while (over() && s > min) { s -= 1; h.style.fontSize = s + 'px'; }
+      if (over()) { parts.forEach(p => { p.style.whiteSpace = ''; }); h.style.fontSize = ''; }
+    });
+  }
+  fitHeadings();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeadings);
+  window.addEventListener('load', fitHeadings);
+  let fitTimer;
+  window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitHeadings, 120); });
 });
