@@ -123,9 +123,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Blog post: reading progress bar, table-of-contents scroll spy, copy-link button.
+  const postBody = document.querySelector('.post-body');
+  if (postBody) {
+    const bar = document.getElementById('postProgress');
+    const onScroll = () => {
+      const r = postBody.getBoundingClientRect(), total = r.height - window.innerHeight * 0.6;
+      const pct = Math.min(1, Math.max(0, (-r.top + window.innerHeight * 0.2) / Math.max(total, 1)));
+      if (bar) bar.style.width = (pct * 100) + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    const links = [...document.querySelectorAll('.toc-list a')];
+    const heads = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    if (heads.length && 'IntersectionObserver' in window) {
+      const spy = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
+          }
+        });
+      }, { rootMargin: '-15% 0px -70% 0px' });
+      heads.forEach(h => spy.observe(h));
+    }
+    const copyBtn = document.getElementById('copyLink');
+    if (copyBtn) copyBtn.addEventListener('click', () => {
+      const done = () => { const t = copyBtn.textContent; copyBtn.textContent = 'Link Copied'; setTimeout(() => { copyBtn.textContent = t; }, 1800); };
+      if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(done, done); else done();
+    });
+  }
+
   // Keep headings on one line: shrink the font (down to a floor) before letting a heading wrap.
   function fitHeadings() {
-    document.querySelectorAll('h2.section-title, .mini-cta h3').forEach(el => {
+    document.querySelectorAll('h2.section-title, .mini-cta h3, .post-body h2').forEach(el => {
       el.style.fontSize = ''; el.style.whiteSpace = 'nowrap';
       const base = parseFloat(getComputedStyle(el).fontSize), min = Math.max(20, base * 0.62);
       let s = base;
