@@ -132,6 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
       while (el.scrollWidth > el.clientWidth + 1 && s > min) { s -= 1; el.style.fontSize = s + 'px'; }
       if (el.scrollWidth > el.clientWidth + 1) { el.style.whiteSpace = ''; el.style.fontSize = ''; }
     });
+    document.querySelectorAll('.cost-stat-card .amount').forEach(el => {
+      el.style.fontSize = ''; el.style.whiteSpace = 'nowrap';
+      const base = parseFloat(getComputedStyle(el).fontSize), min = Math.max(18, base * 0.6);
+      let s = base;
+      while (el.scrollWidth > el.clientWidth + 1 && s > min) { s -= 1; el.style.fontSize = s + 'px'; }
+      if (el.scrollWidth > el.clientWidth + 1) { el.style.whiteSpace = ''; el.style.fontSize = ''; }
+    });
     document.querySelectorAll('.hero-center h1').forEach(h => {
       const lines = h.querySelectorAll('.h1-line');
       const parts = lines.length ? [...lines] : [h];
